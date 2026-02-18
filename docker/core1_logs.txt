@@ -1,0 +1,304 @@
+﻿Starting 'ThingsBoard Node Microservice' ...
+[0.001s][error][logging] Invalid option: filesize must be in range [0, 18446744073709551615]
+[0.001s][error][logging] Initialization of output 'file=/var/log/thingsboard/tb-core1-gc.log' using options 'filecount=10,filesize=10M
+' failed.
+Starting 'ThingsBoard Node Microservice' ...
+[0.000s][error][logging] Invalid option: filesize must be in range [0, 18446744073709551615]
+[0.000s][error][logging] Initialization of output 'file=/var/log/thingsboard/tb-core1-gc.log' using options 'filecount=10,filesize=10M
+' failed.
+Starting 'ThingsBoard Node Microservice' ...
+[0.001s][error][logging] Invalid option: filesize must be in range [0, 18446744073709551615]
+[0.001s][error][logging] Initialization of output 'file=/var/log/thingsboard/tb-core1-gc.log' using options 'filecount=10,filesize=10M
+' failed.
+Starting 'ThingsBoard Node Microservice' ...
+[0.000s][error][logging] Invalid option: filesize must be in range [0, 18446744073709551615]
+[0.001s][error][logging] Initialization of output 'file=/var/log/thingsboard/tb-core1-gc.log' using options 'filecount=10,filesize=10M
+' failed.
+docker : 
+/config/thingsboard.conf: 
+line 16: $'\r': command not 
+found
+At line:1 char:1
++ docker logs 
+docker-tb-core1-1 2>&1 | 
+Out-File -FilePath 
+core1_logs.tx ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (/config  
+  /thingsb...mmand not fou   
+ nd:String) [], RemoteExc    
+eption
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+Starting 'ThingsBoard Node Microservice' ...
+[0.000s][error][logging] Invalid option: filesize must be in range [0, 18446744073709551615]
+Invalid -Xlog option '-Xlog:g
+c*,heap*,age*,safepoint=debug
+:file=/var/log/thingsboard/tb
+-core1-gc.log:time,uptime,lev
+el,tags:filecount=10,filesize
+=10M
+', see error log for details.
+Error: Could not create the 
+Java Virtual Machine.
+Error: A fatal exception has 
+occurred. Program will exit.
+/config/thingsboard.conf: 
+line 16: $'\r': command not 
+found
+Invalid -Xlog option '-Xlog:g
+c*,heap*,age*,safepoint=debug
+:file=/var/log/thingsboard/tb
+-core1-gc.log:time,uptime,lev
+el,tags:filecount=10,filesize
+=10M
+', see error log for details.
+Error: Could not create the 
+Java Virtual Machine.
+Error: A fatal exception has 
+occurred. Program will exit.
+/config/thingsboard.conf: 
+line 16: $'\r': command not 
+found
+Invalid -Xlog option '-Xlog:g
+c*,heap*,age*,safepoint=debug
+:file=/var/log/thingsboard/tb
+-core1-gc.log:time,uptime,lev
+el,tags:filecount=10,filesize
+=10M
+', see error log for details.
+Error: Could not create the 
+Java Virtual Machine.
+Error: A fatal exception has 
+occurred. Program will exit.
+/config/thingsboard.conf: 
+line 16: $'\r': command not 
+found
+Invalid -Xlog option '-Xlog:g
+c*,heap*,age*,safepoint=debug
+:file=/var/log/thingsboard/tb
+-core1-gc.log:time,uptime,lev
+el,tags:filecount=10,filesize
+=10M
+', see error log for details.
+Error: Could not create the 
+Java Virtual Machine.
+Error: A fatal exception has 
+occurred. Program will exit.
+/config/thingsboard.conf: 
+line 16: $'\r': command not 
+found
+Invalid -Xlog option '-Xlog:g
+c*,heap*,age*,safepoint=debug
+:file=/var/log/thingsboard/tb
+-core1-gc.log:time,uptime,lev
+el,tags:filecount=10,filesize
+=10M
+', see error log for details.
+[0.000s][error][logging] Initialization of output 'file=/var/log/thingsboard/tb-core1-gc.log' using options 'filecount=10,filesize=10M
+' failed.
+Error: Could not create the 
+Java Virtual Machine.
+Error: A fatal exception has 
+occurred. Program will exit.
+/config/thingsboard.conf: 
+line 16: $'\r': command not 
+found
+Starting 'ThingsBoard Node Microservice' ...
+[0.001s][error][logging] Invalid option: filesize must be in range [0, 18446744073709551615]
+[0.001s][error][logging] Initialization of output 'file=/var/log/thingsboard/tb-core1-gc.log' using options 'filecount=10,filesize=10M
+' failed.
+Starting 'ThingsBoard Node Microservice' ...
+[0.000s][error][logging] Invalid option: filesize must be in range [0, 18446744073709551615]
+[0.000s][error][logging] Initialization of output 'file=/var/log/thingsboard/tb-core1-gc.log' using options 'filecount=10,filesize=10M
+' failed.
+Starting 'ThingsBoard Node Microservice' ...
+[0.000s][error][logging] Invalid option: filesize must be in range [0, 18446744073709551615]
+[0.000s][error][logging] Initialization of output 'file=/var/log/thingsboard/tb-core1-gc.log' using options 'filecount=10,filesize=10M
+' failed.
+Starting 'ThingsBoard Node Microservice' ...
+[0.000s][error][logging] Invalid option: filesize must be in range [0, 18446744073709551615]
+[0.000s][error][logging] Initialization of output 'file=/var/log/thingsboard/tb-core1-gc.log' using options 'filecount=10,filesize=10M
+' failed.
+Starting 'ThingsBoard Node Microservice' ...
+[0.000s][error][logging] Invalid option: filesize must be in range [0, 18446744073709551615]
+[0.000s][error][logging] Initialization of output 'file=/var/log/thingsboard/tb-core1-gc.log' using options 'filecount=10,filesize=10M
+' failed.
+Starting 'ThingsBoard Node Microservice' ...
+[0.000s][error][logging] Invalid option: filesize must be in range [0, 18446744073709551615]
+[0.000s][error][logging] Initialization of output 'file=/var/log/thingsboard/tb-core1-gc.log' using options 'filecount=10,filesize=10M
+' failed.
+Starting 'ThingsBoard Node Microservice' ...
+[0.000s][error][logging] Invalid option: filesize must be in range [0, 18446744073709551615]
+[0.000s][error][logging] Initialization of output 'file=/var/log/thingsboard/tb-core1-gc.log' using options 'filecount=10,filesize=10M
+' failed.
+Starting 'ThingsBoard Node Microservice' ...
+[0.000s][error][logging] Invalid option: filesize must be in range [0, 18446744073709551615]
+[0.000s][error][logging] Initialization of output 'file=/var/log/thingsboard/tb-core1-gc.log' using options 'filecount=10,filesize=10M
+' failed.
+Starting 'ThingsBoard Node Microservice' ...
+[0.000s][error][logging] Invalid option: filesize must be in range [0, 18446744073709551615]
+[0.000s][error][logging] Initialization of output 'file=/var/log/thingsboard/tb-core1-gc.log' using options 'filecount=10,filesize=10M
+' failed.
+Starting 'ThingsBoard Node Microservice' ...
+[0.000s][error][logging] Invalid option: filesize must be in range [0, 18446744073709551615]
+[0.000s][error][logging] Initialization of output 'file=/var/log/thingsboard/tb-core1-gc.log' using options 'filecount=10,filesize=10M
+' failed.
+Starting 'ThingsBoard Node Microservice' ...
+[0.001s][error][logging] Invalid option: filesize must be in range [0, 18446744073709551615]
+[0.001s][error][logging] Initialization of output 'file=/var/log/thingsboard/tb-core1-gc.log' using options 'filecount=10,filesize=10M
+' failed.
+Invalid -Xlog option '-Xlog:g
+c*,heap*,age*,safepoint=debug
+:file=/var/log/thingsboard/tb
+-core1-gc.log:time,uptime,lev
+el,tags:filecount=10,filesize
+=10M
+', see error log for details.
+Error: Could not create the 
+Java Virtual Machine.
+Error: A fatal exception has 
+occurred. Program will exit.
+/config/thingsboard.conf: 
+line 16: $'\r': command not 
+found
+Invalid -Xlog option '-Xlog:g
+c*,heap*,age*,safepoint=debug
+:file=/var/log/thingsboard/tb
+-core1-gc.log:time,uptime,lev
+el,tags:filecount=10,filesize
+=10M
+', see error log for details.
+Error: Could not create the 
+Java Virtual Machine.
+Error: A fatal exception has 
+occurred. Program will exit.
+/config/thingsboard.conf: 
+line 16: $'\r': command not 
+found
+Invalid -Xlog option '-Xlog:g
+c*,heap*,age*,safepoint=debug
+:file=/var/log/thingsboard/tb
+-core1-gc.log:time,uptime,lev
+el,tags:filecount=10,filesize
+=10M
+', see error log for details.
+Error: Could not create the 
+Java Virtual Machine.
+Error: A fatal exception has 
+occurred. Program will exit.
+/config/thingsboard.conf: 
+line 16: $'\r': command not 
+found
+Invalid -Xlog option '-Xlog:g
+c*,heap*,age*,safepoint=debug
+:file=/var/log/thingsboard/tb
+-core1-gc.log:time,uptime,lev
+el,tags:filecount=10,filesize
+=10M
+', see error log for details.
+Error: Could not create the 
+Java Virtual Machine.
+Error: A fatal exception has 
+occurred. Program will exit.
+/config/thingsboard.conf: 
+line 16: $'\r': command not 
+found
+Invalid -Xlog option '-Xlog:g
+c*,heap*,age*,safepoint=debug
+:file=/var/log/thingsboard/tb
+-core1-gc.log:time,uptime,lev
+el,tags:filecount=10,filesize
+=10M
+', see error log for details.
+Error: Could not create the 
+Java Virtual Machine.
+Error: A fatal exception has 
+occurred. Program will exit.
+/config/thingsboard.conf: 
+line 16: $'\r': command not 
+found
+Invalid -Xlog option '-Xlog:g
+c*,heap*,age*,safepoint=debug
+:file=/var/log/thingsboard/tb
+-core1-gc.log:time,uptime,lev
+el,tags:filecount=10,filesize
+=10M
+', see error log for details.
+Error: Could not create the 
+Java Virtual Machine.
+Error: A fatal exception has 
+occurred. Program will exit.
+/config/thingsboard.conf: 
+line 16: $'\r': command not 
+found
+Invalid -Xlog option '-Xlog:g
+c*,heap*,age*,safepoint=debug
+:file=/var/log/thingsboard/tb
+-core1-gc.log:time,uptime,lev
+el,tags:filecount=10,filesize
+=10M
+', see error log for details.
+Error: Could not create the 
+Java Virtual Machine.
+Error: A fatal exception has 
+occurred. Program will exit.
+/config/thingsboard.conf: 
+line 16: $'\r': command not 
+found
+Invalid -Xlog option '-Xlog:g
+c*,heap*,age*,safepoint=debug
+:file=/var/log/thingsboard/tb
+-core1-gc.log:time,uptime,lev
+el,tags:filecount=10,filesize
+=10M
+', see error log for details.
+Error: Could not create the 
+Java Virtual Machine.
+Error: A fatal exception has 
+occurred. Program will exit.
+/config/thingsboard.conf: 
+line 16: $'\r': command not 
+found
+Invalid -Xlog option '-Xlog:g
+c*,heap*,age*,safepoint=debug
+:file=/var/log/thingsboard/tb
+-core1-gc.log:time,uptime,lev
+el,tags:filecount=10,filesize
+=10M
+', see error log for details.
+Error: Could not create the 
+Java Virtual Machine.
+Error: A fatal exception has 
+occurred. Program will exit.
+/config/thingsboard.conf: 
+line 16: $'\r': command not 
+found
+Invalid -Xlog option '-Xlog:g
+c*,heap*,age*,safepoint=debug
+:file=/var/log/thingsboard/tb
+-core1-gc.log:time,uptime,lev
+el,tags:filecount=10,filesize
+=10M
+', see error log for details.
+Error: Could not create the 
+Java Virtual Machine.
+Error: A fatal exception has 
+occurred. Program will exit.
+/config/thingsboard.conf: 
+line 16: $'\r': command not 
+found
+Invalid -Xlog option '-Xlog:g
+c*,heap*,age*,safepoint=debug
+:file=/var/log/thingsboard/tb
+-core1-gc.log:time,uptime,lev
+el,tags:filecount=10,filesize
+=10M
+', see error log for details.
+Error: Could not create the 
+Java Virtual Machine.
+Error: A fatal exception has 
+occurred. Program will exit.

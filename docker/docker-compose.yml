@@ -35,8 +35,9 @@ services:
     restart: always
     image: "${DOCKER_REPO}/${TB_NODE_DOCKER_NAME}:${TB_VERSION}"
     ports:
-      - "8080"
+      - "8080:8080"
       - "7070"
+      - "5005:5005"
     logging:
       driver: "json-file"
       options:
@@ -46,17 +47,17 @@ services:
       TB_SERVICE_ID: tb-core1
       TB_SERVICE_TYPE: tb-core
       EDGES_ENABLED: "true"
-      JAVA_OPTS: "${JAVA_OPTS}"
     env_file:
       - tb-node.env
     volumes:
       - ./tb-node/conf:/config
       - ./tb-node/log:/var/log/thingsboard
+      - ./start-tb-node-debug.sh:/usr/share/thingsboard/bin/start-tb-node-debug.sh
+    entrypoint: ["/bin/bash", "/usr/share/thingsboard/bin/start-tb-node-debug.sh"]
     depends_on:
       - zookeeper
       - tb-js-executor
       - tb-rule-engine1
-      - tb-rule-engine2
   tb-core2:
     restart: always
     image: "${DOCKER_REPO}/${TB_NODE_DOCKER_NAME}:${TB_VERSION}"
@@ -143,7 +144,6 @@ services:
     depends_on:
       - zookeeper
       - tb-core1
-      - tb-core2
   tb-mqtt-transport2:
     restart: always
     image: "${DOCKER_REPO}/${MQTT_TRANSPORT_DOCKER_NAME}:${TB_VERSION}"
@@ -177,7 +177,6 @@ services:
     depends_on:
       - zookeeper
       - tb-core1
-      - tb-core2
   tb-http-transport2:
     restart: always
     image: "${DOCKER_REPO}/${HTTP_TRANSPORT_DOCKER_NAME}:${TB_VERSION}"
@@ -251,7 +250,7 @@ services:
     restart: always
     image: "${DOCKER_REPO}/${WEB_UI_DOCKER_NAME}:${TB_VERSION}"
     ports:
-      - "8080"
+      - "9090:8080"
     env_file:
       - tb-web-ui.env
   tb-web-ui2:

@@ -38,3 +38,9 @@ rebuild-docker.sh
 .run/**
 .run
 .claude/
+
+# Sensitive files removed from history
+HOW_TO_RUN.txt
+run_application.bat
+Run.txt
+server_log.txt
