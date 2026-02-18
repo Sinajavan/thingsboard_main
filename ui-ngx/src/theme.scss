@@ -243,4 +243,6 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
 
 .tb-dark {
   @include mat.all-component-colors($tb-dark-theme);
+  @include tb-components-theme($tb-dark-theme);
+  @include overwrites.theme-overwrites($tb-dark-primary, $tb-dark-theme);
 }

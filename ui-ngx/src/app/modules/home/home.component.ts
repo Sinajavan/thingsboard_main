@@ -34,12 +34,13 @@ import { RouterTabsComponent } from '@home/components/router-tabs.component';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { isDefined, isDefinedAndNotNull } from '@core/utils';
+import { ThemeService } from '@core/services/theme.service';
 
 @Component({
-    selector: 'tb-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss'],
-    standalone: false
+  selector: 'tb-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
+  standalone: false
 })
 export class HomeComponent extends PageComponent implements AfterViewInit, OnInit, OnDestroy {
 
@@ -64,18 +65,27 @@ export class HomeComponent extends PageComponent implements AfterViewInit, OnIni
 
   searchEnabled = false;
   showSearch = false;
-  textSearch = this.fb.control('', {nonNullable: true});
+  textSearch = this.fb.control('', { nonNullable: true });
 
   hideLoadingBar = false;
 
   private destroy$ = new Subject<void>();
 
   constructor(protected store: Store<AppState>,
-              @Inject(WINDOW) private window: Window,
-              private activeComponentService: ActiveComponentService,
-              private fb: FormBuilder,
-              public breakpointObserver: BreakpointObserver) {
+    @Inject(WINDOW) private window: Window,
+    private activeComponentService: ActiveComponentService,
+    private fb: FormBuilder,
+    public breakpointObserver: BreakpointObserver,
+    public themeService: ThemeService) {
     super(store);
+  }
+
+  isDarkTheme(): boolean {
+    return this.themeService.isDark();
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
   }
 
   ngOnInit() {
@@ -88,14 +98,14 @@ export class HomeComponent extends PageComponent implements AfterViewInit, OnIni
       .observe(MediaBreakpoints['gt-sm'])
       .pipe(takeUntil(this.destroy$))
       .subscribe((state: BreakpointState) => {
-          if (state.matches) {
-            this.sidenavMode = 'side';
-            this.sidenavOpened = true;
-          } else {
-            this.sidenavMode = 'over';
-            this.sidenavOpened = false;
-          }
+        if (state.matches) {
+          this.sidenavMode = 'side';
+          this.sidenavOpened = true;
+        } else {
+          this.sidenavMode = 'over';
+          this.sidenavOpened = false;
         }
+      }
       );
   }
 
@@ -148,7 +158,7 @@ export class HomeComponent extends PageComponent implements AfterViewInit, OnIni
   private updateActiveComponent(activeComponent: any) {
     this.showSearch = false;
     this.hideLoadingBar = false;
-    this.textSearch.reset('', {emitEvent: false});
+    this.textSearch.reset('', { emitEvent: false });
     this.activeComponent = activeComponent;
 
     if (activeComponent && activeComponent instanceof RouterTabsComponent
