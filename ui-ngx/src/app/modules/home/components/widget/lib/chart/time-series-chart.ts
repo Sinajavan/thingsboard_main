@@ -191,7 +191,8 @@ export class TbTimeSeriesChart {
     }
     const $dashboardPageElement = this.ctx.$containerParent.parents('.tb-dashboard-page');
     const dashboardPageElement = $dashboardPageElement.length ? $($dashboardPageElement[$dashboardPageElement.length - 1]) : null;
-    this.darkMode = this.settings.darkMode || dashboardPageElement?.hasClass('dark');
+    const body = $('body');
+    this.darkMode = this.settings.darkMode || dashboardPageElement?.hasClass('dark') || body.hasClass('tb-dark');
     this.unitService = this.ctx.$injector.get(UnitService);
     this.setupXAxes();
     this.setupYAxes();
@@ -224,17 +225,19 @@ export class TbTimeSeriesChart {
       });
       this.shapeResize$.observe(this.chartElement);
     }
-    if (dashboardPageElement) {
-      this.darkModeObserver = new MutationObserver(mutations => {
-        for (const mutation of mutations) {
-          if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-            const darkMode = dashboardPageElement.hasClass('dark');
-            this.setDarkMode(darkMode);
-          }
+
+    this.darkModeObserver = new MutationObserver(mutations => {
+      for (const mutation of mutations) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          const darkMode = (dashboardPageElement && dashboardPageElement.hasClass('dark')) || body.hasClass('tb-dark');
+          this.setDarkMode(darkMode);
         }
-      });
+      }
+    });
+    if (dashboardPageElement) {
       this.darkModeObserver.observe(dashboardPageElement[0], { attributes: true });
     }
+    this.darkModeObserver.observe(document.body, { attributes: true });
   }
 
   public update(): void {

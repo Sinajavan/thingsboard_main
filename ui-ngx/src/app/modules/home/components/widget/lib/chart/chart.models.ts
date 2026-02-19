@@ -28,27 +28,27 @@ import { WidgetContext } from '@home/models/widget-component.models';
 export const chartColorScheme: TbColorScheme = {
   'threshold.line': {
     light: 'rgba(0, 0, 0, 0.76)',
-    dark: '#eee'
+    dark: '#ffffff'
   },
   'threshold.label': {
     light: 'rgba(0, 0, 0, 0.76)',
-    dark: '#eee'
+    dark: '#ffffff'
   },
   'axis.line': {
     light: 'rgba(0, 0, 0, 0.54)',
-    dark: '#B9B8CE'
+    dark: '#ffffff'
   },
   'axis.label': {
     light: 'rgba(0, 0, 0, 0.54)',
-    dark: '#B9B8CE'
+    dark: '#ffffff'
   },
   'axis.ticks': {
     light: 'rgba(0, 0, 0, 0.54)',
-    dark: '#B9B8CE'
+    dark: '#ffffff'
   },
   'axis.tickLabel': {
     light: 'rgba(0, 0, 0, 0.54)',
-    dark: '#B9B8CE'
+    dark: '#ffffff'
   },
   'axis.splitLine': {
     light: 'rgba(0, 0, 0, 0.12)',
@@ -56,7 +56,7 @@ export const chartColorScheme: TbColorScheme = {
   },
   'series.label': {
     light: 'rgba(0, 0, 0, 0.76)',
-    dark: '#eee'
+    dark: '#ffffff'
   }
 };
 
@@ -228,7 +228,7 @@ export interface ChartBarSettings {
   labelBackground: string;
   labelFormatter?: string | LabelFormatterCallback;
   labelLayout?: LabelLayoutOption | LabelLayoutOptionCallback;
-  additionalLabelOption?: {[key: string]: any};
+  additionalLabelOption?: { [key: string]: any };
   backgroundSettings: ChartFillSettings;
 }
 
@@ -290,7 +290,7 @@ export const measureSymbolOffset = (symbol: string, symbolSize: any): number => 
   }
 };
 
-export const createLinearOpacityGradient = (color: string, gradient: {start: number; end: number}): LinearGradientObject => ({
+export const createLinearOpacityGradient = (color: string, gradient: { start: number; end: number }): LinearGradientObject => ({
   type: 'linear',
   x: 0,
   y: 0,
@@ -304,7 +304,7 @@ export const createLinearOpacityGradient = (color: string, gradient: {start: num
   global: false
 });
 
-export const createRadialOpacityGradient = (color: string, gradient: {start: number; end: number}): RadialGradientObject => ({
+export const createRadialOpacityGradient = (color: string, gradient: { start: number; end: number }): RadialGradientObject => ({
   type: 'radial',
   x: 0.5,
   y: 0.5,
@@ -337,7 +337,7 @@ export const prepareChartThemeColor = (color: string, darkMode: boolean, colorKe
         return chartColorScheme[colorKey].dark;
       } else {
         const rgb = colorInstance.toRgb();
-        colorInstance = tinycolor({r: 255 - rgb.r, g: 255 - rgb.g, b: 255 - rgb.b, a: rgb.a});
+        colorInstance = tinycolor({ r: 255 - rgb.r, g: 255 - rgb.g, b: 255 - rgb.b, a: rgb.a });
         return colorInstance.toRgbString();
       }
     }

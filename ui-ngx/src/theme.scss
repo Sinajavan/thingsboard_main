@@ -459,7 +459,11 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
 
   // Ensure titles in headers are white
   .tb-card-header,
-  .tb-card-title {
+  .tb-card-title,
+  .tb-home-widget-title,
+  .tb-widget-title,
+  .tb-timewindow {
+    color: white !important;
 
     .tb-title,
     span,
@@ -488,5 +492,11 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
         color: white !important;
       }
     }
+  }
+
+  // Time Series Chart Panel Override
+  .tb-time-series-chart-panel {
+    background: transparent !important;
+    background-color: transparent !important;
   }
 }
