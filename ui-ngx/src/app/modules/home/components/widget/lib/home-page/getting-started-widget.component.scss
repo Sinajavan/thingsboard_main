@@ -27,6 +27,7 @@
     letter-spacing: 0.1px;
     color: rgba(0, 0, 0, 0.76);
     padding-bottom: 24px;
+
     @media #{$mat-md-lg} {
       font-weight: 500;
       font-size: 14px;
@@ -35,6 +36,7 @@
       padding-bottom: 20px;
     }
   }
+
   .tb-get-started-container {
     flex: 1;
     overflow: auto;
@@ -83,13 +85,16 @@
   }
 
   .tb-get-started .mat-vertical-content {
-    p, li {
+
+    p,
+    li {
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
       line-height: 20px;
       letter-spacing: 0.2px;
       color: rgba(0, 0, 0, 0.54);
+
       em {
         font-style: normal;
         font-weight: 500;
@@ -97,9 +102,11 @@
         color: rgba(0, 0, 0, 0.38);
       }
     }
+
     ul {
       padding-inline-start: 20px;
     }
+
     .tb-bordered-content {
       display: flex;
       flex-direction: column;
@@ -107,15 +114,18 @@
       border: 1px solid rgba(0, 0, 0, 0.05);
       border-radius: 8px;
       padding: 16px;
+
       p {
         margin-top: 16px;
         margin-bottom: 8px;
       }
     }
+
     .tb-markdown-view {
       .tb-getting-started-code {
         .code-wrapper {
           padding: 0;
+
           pre[class*=language-] {
             margin: 0;
             padding: 9px 38px 9px 16px;
@@ -123,7 +133,9 @@
             border-radius: 6px;
             border: none;
           }
-          code[class*="language-"], pre[class*="language-"] {
+
+          code[class*="language-"],
+          pre[class*="language-"] {
             font-family: 'Roboto';
             font-style: normal;
             font-weight: 400;
@@ -134,31 +146,39 @@
             overflow: hidden;
             white-space: break-spaces;
             word-break: break-all;
+
             & * {
               color: rgba(0, 0, 0, 0.38);
               cursor: inherit;
               background: transparent;
             }
           }
+
           button.clipboard-btn {
             right: 0;
             height: 34px;
-            p, div {
+
+            p,
+            div {
               background: transparent;
             }
+
             p {
               margin: 0;
               padding: 6px 7px;
               color: #305680;
             }
+
             div {
               top: 0;
               padding: 8px;
               height: 34px;
               width: 34px;
+
               img {
                 display: none;
               }
+
               &:after {
                 content: "";
                 position: initial;
@@ -176,6 +196,7 @@
         }
       }
     }
+
     @media #{$mat-md-lg} {
       .tb-bordered-content {
         padding: 4px;
@@ -188,6 +209,7 @@
       font-size: 12px;
       line-height: 16px;
     }
+
     .tb-get-started .mat-step-label.mat-step-label-selected {
       font-size: 13px;
       line-height: 16px;
@@ -199,7 +221,9 @@
     }
 
     .tb-get-started .mat-vertical-content {
-      p, li {
+
+      p,
+      li {
         font-size: 12px;
         line-height: 16px;
         letter-spacing: 0.25px;
@@ -208,6 +232,32 @@
 
     .tb-get-started .mat-vertical-content {
       padding: 0 16px 16px 16px;
+    }
+  }
+}
+
+:host-context(.tb-dark) {
+  .tb-get-started {
+    background-color: #5d5d5d !important;
+    color: white !important;
+
+    .mat-step-header {
+
+      .mat-step-label,
+      .mat-step-icon {
+        color: white !important;
+      }
+    }
+
+    // Ensure selected step and content remain black
+    .mat-vertical-stepper-header[aria-selected="true"],
+    .mat-vertical-content-container {
+      background-color: black !important;
+    }
+
+    .mat-vertical-content p,
+    .mat-vertical-content li {
+      color: white !important;
     }
   }
 }

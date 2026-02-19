@@ -37,11 +37,11 @@
         border-radius: 4px;
       }
 
-      .mat-toolbar-tools{
+      .mat-toolbar-tools {
         min-height: auto;
       }
 
-      .title-container{
+      .title-container {
         overflow: hidden;
         height: 100%;
       }
@@ -68,7 +68,7 @@
         }
       }
 
-      .tb-entity-table-info{
+      .tb-entity-table-info {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -80,11 +80,12 @@
     .mat-toolbar {
       height: auto;
       min-height: 100px;
-      .mat-toolbar-tools{
+
+      .mat-toolbar-tools {
         height: auto;
       }
 
-      .tb-entity-table-title{
+      .tb-entity-table-title {
         padding-bottom: 5px;
         width: 100%;
       }
@@ -94,4 +95,102 @@
 
 :host ::ng-deep .mat-sort-header-sorted .mat-sort-header-arrow {
   opacity: 1 !important;
+}
+
+:host-context(.tb-dark) {
+  .tb-entity-table-content {
+    background: black !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+
+    mat-toolbar {
+      background-color: transparent !important;
+    }
+
+    .tb-entity-table-info,
+    .tb-entity-table-title {
+      color: white !important;
+    }
+  }
+
+  mat-drawer-container {
+    background-color: #121212 !important;
+  }
+
+  mat-drawer.tb-details-drawer {
+    background-color: #1e1e1e !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+
+    .tb-details-title {
+      color: white !important;
+    }
+
+    .tb-details-subtitle {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+  }
+
+  .mat-mdc-table {
+    background: black !important;
+
+    .mat-mdc-header-row {
+      background: black !important;
+    }
+
+    .mat-mdc-row {
+      background: black !important;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.08) !important;
+      }
+    }
+
+    .mat-mdc-header-cell,
+    .mat-mdc-cell,
+    .tb-cell {
+      color: white !important;
+    }
+
+    a {
+      color: white !important;
+    }
+
+    .mat-icon {
+      color: white !important;
+    }
+  }
+
+  .no-data-found {
+    color: white !important;
+  }
+
+  .mat-mdc-paginator {
+    background: black !important;
+    color: white !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    .mat-mdc-paginator-container {
+      background: black !important;
+    }
+
+    .mat-mdc-paginator-page-size-label,
+    .mat-mdc-paginator-range-label {
+      color: white !important;
+    }
+
+    .mat-mdc-icon-button {
+      color: white !important;
+
+      &[disabled] {
+        color: rgba(255, 255, 255, 0.3) !important;
+      }
+    }
+
+    .mat-mdc-select-value {
+      color: white !important;
+    }
+
+    .mat-mdc-select-arrow {
+      color: white !important;
+    }
+  }
 }

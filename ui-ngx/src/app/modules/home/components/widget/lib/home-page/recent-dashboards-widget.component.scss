@@ -21,12 +21,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
     @media #{$mat-lt-md} {
       flex-direction: column;
       align-items: stretch;
       gap: 12px;
     }
   }
+
   .tb-no-dashboards {
     flex: 1;
     display: flex;
@@ -34,11 +36,13 @@
     align-items: center;
     justify-content: center;
   }
+
   .tb-no-last-visited-bg {
     width: 60px;
     height: 60px;
     margin: 10px;
     position: relative;
+
     &:before {
       content: "";
       border-radius: 8px;
@@ -54,6 +58,7 @@
       mask-repeat: no-repeat;
     }
   }
+
   .tb-no-last-visited-dashboards-text {
     font-weight: 500;
     font-size: 14px;
@@ -67,6 +72,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+
     @media #{$mat-md-lg} {
       height: 34px;
     }
@@ -74,9 +80,11 @@
 
   .tb-cell {
     box-sizing: content-box;
+
     &:first-child {
       padding: 0 12px;
     }
+
     &:nth-child(n+2):nth-last-child(n+2) {
       padding: 0 28px 0 0;
     }
@@ -85,6 +93,7 @@
   .tb-star-dashboard-autocomplete {
     margin-left: 64px;
     margin-right: 64px;
+
     @media #{$mat-md-lg} {
       margin-left: 48px;
       margin-right: 48px;
@@ -93,13 +102,19 @@
 }
 
 :host ::ng-deep {
-  .mat-mdc-cell, .mat-mdc-header-cell, .mdc-data-table__row:last-child .mdc-data-table__cell {
+
+  .mat-mdc-cell,
+  .mat-mdc-header-cell,
+  .mdc-data-table__row:last-child .mdc-data-table__cell {
     border-bottom: none;
   }
 
   .mat-mdc-table {
-    .mdc-data-table__row, .mdc-data-table__header-row {
+
+    .mdc-data-table__row,
+    .mdc-data-table__header-row {
       height: 40px;
+
       @media #{$mat-md-lg} {
         height: 34px;
       }
@@ -120,10 +135,13 @@
     }
   }
 
-  .mat-mdc-header-cell, .mat-mdc-cell, .tb-cell {
+  .mat-mdc-header-cell,
+  .mat-mdc-cell,
+  .tb-cell {
     &.star-cell {
       width: 40px;
       min-width: 40px;
+
       @media #{$mat-md-lg} {
         width: 24px;
         min-width: 24px;
@@ -137,6 +155,7 @@
 
     &.last-visited {
       width: 80px;
+
       @media #{$mat-md-lg} {
         width: 50px;
       }
@@ -149,53 +168,68 @@
     line-height: 16px;
     letter-spacing: 0.25px;
     color: rgba(0, 0, 0, 0.38);
+
     @media #{$mat-md-lg} {
       font-size: 11px;
     }
   }
+
   .mat-mdc-cell.title {
     max-width: 0;
   }
-  .mat-mdc-cell, .tb-cell {
+
+  .mat-mdc-cell,
+  .tb-cell {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.2px;
+
     @media #{$mat-md-lg} {
       font-size: 11px;
       line-height: 16px;
     }
+
     &.title {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+
       a {
         color: rgba(0, 0, 0, 0.87);
         border-bottom: none;
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
           border-bottom: none;
         }
       }
     }
+
     &.last-visited {
       cursor: default;
       color: rgba(0, 0, 0, 0.54);
     }
+
     .star {
       cursor: pointer;
       vertical-align: middle;
       color: rgba(0, 0, 0, 0.12);
+
       &:hover {
         color: rgba(0, 0, 0, 0.18);
       }
+
       &.starred {
         color: #FAE205;
+
         &:hover {
           color: #CDBD2C;
         }
       }
     }
   }
+
   .tb-star-dashboard-autocomplete {
     .mat-mdc-form-field {
       font-weight: 400;
@@ -203,38 +237,68 @@
       line-height: 20px;
       letter-spacing: 0.2px;
       color: rgba(0, 0, 0, 0.54);
+
       @media #{$mat-md-lg} {
         font-size: 11px;
         line-height: 16px;
       }
     }
+
     .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
       padding-top: 4px;
       padding-bottom: 4px;
       min-height: 28px;
+
       @media #{$mat-md-lg} {
         min-height: 24px;
       }
     }
+
     .mat-mdc-form-field-hint-wrapper {
       height: 0;
     }
+
     .mdc-text-field--outlined .mdc-notched-outline {
-      .mdc-notched-outline__leading, .mdc-notched-outline__trailing {
+
+      .mdc-notched-outline__leading,
+      .mdc-notched-outline__trailing {
         border-top-style: dashed;
         border-bottom-style: dashed;
       }
+
       .mdc-notched-outline__leading {
         border-left-style: dashed;
       }
+
       .mdc-notched-outline__trailing {
         border-right-style: dashed;
       }
     }
+
     .mat-mdc-icon-button.mat-mdc-button-base {
       width: 28px;
       height: 28px;
       padding: 2px;
     }
+  }
+}
+
+:host-context(.tb-dark) {
+  .mat-mdc-row {
+    background-color: #5d5d5d !important;
+
+    .mat-mdc-cell,
+    .tb-cell,
+    a {
+      color: white !important;
+    }
+
+    &:hover {
+      background-color: #6d6d6d !important;
+    }
+  }
+
+  .tb-no-last-visited-dashboards-text {
+    color: white !important;
   }
 }
