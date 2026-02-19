@@ -139,7 +139,7 @@ export class TbTimeSeriesChart {
   private thresholdItems: TimeSeriesChartThresholdItem[] = [];
 
   private hasVisualMap = false;
-  private visualMapSelectedRanges: {[key: number]: boolean};
+  private visualMapSelectedRanges: { [key: number]: boolean };
 
   private timeSeriesChart: ECharts;
   private timeSeriesChartOptions: EChartsOption;
@@ -173,10 +173,10 @@ export class TbTimeSeriesChart {
   yMax$ = this.yMaxSubject.asObservable();
 
   constructor(private ctx: WidgetContext,
-              private readonly inputSettings: DeepPartial<TimeSeriesChartSettings>,
-              private chartElement: HTMLElement,
-              private renderer: Renderer2,
-              private autoResize = true) {
+    private readonly inputSettings: DeepPartial<TimeSeriesChartSettings>,
+    private chartElement: HTMLElement,
+    private renderer: Renderer2,
+    private autoResize = true) {
 
     let tooltipValueFormatFunction: TimeSeriesChartTooltipValueFormatFunction;
 
@@ -190,7 +190,7 @@ export class TbTimeSeriesChart {
       tooltipValueFormatFunction = this.stateValueConverter.tooltipFormatter;
     }
     const $dashboardPageElement = this.ctx.$containerParent.parents('.tb-dashboard-page');
-    const dashboardPageElement = $dashboardPageElement.length ? $($dashboardPageElement[$dashboardPageElement.length-1]) : null;
+    const dashboardPageElement = $dashboardPageElement.length ? $($dashboardPageElement[$dashboardPageElement.length - 1]) : null;
     this.darkMode = this.settings.darkMode || dashboardPageElement?.hasClass('dark');
     this.unitService = this.ctx.$injector.get(UnitService);
     this.setupXAxes();
@@ -233,7 +233,7 @@ export class TbTimeSeriesChart {
           }
         }
       });
-      this.darkModeObserver.observe(dashboardPageElement[0], {attributes: true});
+      this.darkModeObserver.observe(dashboardPageElement[0], { attributes: true });
     }
   }
 
@@ -360,7 +360,7 @@ export class TbTimeSeriesChart {
         this.timeSeriesChartOptions.yAxis = this.yAxisList.map(axis => axis.option);
         mergeList.push('yAxis');
       }
-      this.timeSeriesChart.setOption(this.timeSeriesChartOptions, this.stackMode ? {notMerge: true} : {replaceMerge: mergeList});
+      this.timeSeriesChart.setOption(this.timeSeriesChartOptions, this.stackMode ? { notMerge: true } : { replaceMerge: mergeList });
       this.updateAxes();
       dataKey.hidden = !enable;
       if (isDefined(dataIndex)) {
@@ -436,11 +436,11 @@ export class TbTimeSeriesChart {
           const keySettings = mergeDeep<TimeSeriesChartKeySettings>({} as TimeSeriesChartKeySettings,
             timeSeriesChartKeyDefaultSettings, dataKey.settings);
           if ((keySettings.type === TimeSeriesChartSeriesType.line && keySettings.lineSettings.showPointLabel &&
-              keySettings.lineSettings.pointLabelPosition === ChartLabelPosition.top) ||
+            keySettings.lineSettings.pointLabelPosition === ChartLabelPosition.top) ||
             (keySettings.type === TimeSeriesChartSeriesType.bar &&
               keySettings.barSettings.showLabel &&
               [ChartLabelPosition.top, ChartLabelPosition.bottom]
-              .includes(keySettings.barSettings.labelPosition as ChartLabelPosition))) {
+                .includes(keySettings.barSettings.labelPosition as ChartLabelPosition))) {
             this.topPointLabels = true;
           }
           if (this.stateValueConverter && keySettings.type === TimeSeriesChartSeriesType.line) {
@@ -503,7 +503,7 @@ export class TbTimeSeriesChart {
             latestDataKey = datasource.latestDataKeys?.find(d =>
               (d.type === DataKeyType.function && d.label === threshold.latestKey) ||
               (d.type !== DataKeyType.function && d.name === threshold.latestKey &&
-               d.type === threshold.latestKeyType));
+                d.type === threshold.latestKeyType));
             if (latestDataKey) {
               break;
             }
@@ -774,7 +774,7 @@ export class TbTimeSeriesChart {
   private drawChart() {
     echartsModule.init();
     this.renderer.setStyle(this.chartElement, 'letterSpacing', 'normal');
-    this.timeSeriesChart = echarts.init(this.chartElement,  null, {
+    this.timeSeriesChart = echarts.init(this.chartElement, null, {
       renderer: 'svg'
     });
     this.ctx.dashboard.gridster.el.addEventListener('scroll', this.onParentScroll);
@@ -921,7 +921,7 @@ export class TbTimeSeriesChart {
     rightOffset = Math.max(rightOffset, thresholdsOffset[1]);
 
     if (this.timeSeriesChartOptions.grid[0].left !== leftOffset ||
-      this.timeSeriesChartOptions.grid[0].right !== rightOffset  ||
+      this.timeSeriesChartOptions.grid[0].right !== rightOffset ||
       this.timeSeriesChartOptions.grid[0].bottom !== bottomOffset ||
       this.timeSeriesChartOptions.grid[0].top !== topOffset) {
       this.timeSeriesChartOptions.grid[0].left = leftOffset;
@@ -933,7 +933,7 @@ export class TbTimeSeriesChart {
     if (changed) {
       this.timeSeriesChartOptions.yAxis = this.yAxisList.map(axis => axis.option);
       this.timeSeriesChartOptions.xAxis = this.xAxisList.map(axis => axis.option);
-      this.timeSeriesChart.setOption(this.timeSeriesChartOptions, {replaceMerge: ['yAxis', 'xAxis', 'grid'], lazyUpdate: lazy});
+      this.timeSeriesChart.setOption(this.timeSeriesChartOptions, { replaceMerge: ['yAxis', 'xAxis', 'grid'], lazyUpdate: lazy });
     }
     if (this.yAxisList.length) {
       const extent = getAxisExtent(this.timeSeriesChart, this.yAxisList[0].id);
@@ -948,8 +948,8 @@ export class TbTimeSeriesChart {
     }
   }
 
-  private updateAxisOffset(axisList: TimeSeriesChartAxis[]): {offset: number; changed: boolean} {
-    const result = {offset: 0, changed: false};
+  private updateAxisOffset(axisList: TimeSeriesChartAxis[]): { offset: number; changed: boolean } {
+    const result = { offset: 0, changed: false };
     let size = 0;
     for (const axis of axisList) {
       const newSize = calculateAxisSize(this.timeSeriesChart, axis.option.mainType, axis.id);
@@ -1081,7 +1081,7 @@ export class TbTimeSeriesChart {
     }
   }
 
-  private normalizeAxisLimit(limit: string | number | ValueSourceConfig): string | number | ValueSourceConfig  {
+  private normalizeAxisLimit(limit: string | number | ValueSourceConfig): string | number | ValueSourceConfig {
     if (!limit) {
       return {
         type: ValueSourceType.constant,

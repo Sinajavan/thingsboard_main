@@ -38,8 +38,7 @@ $tb-mat-indigo: (
   A200: #536dfe,
   A400: #3d5afe,
   A700: #304ffe,
-  contrast: (
-    50: rgba(black, 0.87),
+  contrast: (50: rgba(black, 0.87),
     100: rgba(black, 0.87),
     200: rgba(black, 0.87),
     300: white,
@@ -59,19 +58,13 @@ $tb-mat-indigo: (
 $tb-primary: mat.m2-define-palette($tb-mat-indigo);
 $tb-accent: mat.m2-define-palette(mat.$m2-deep-orange-palette);
 
-$tb-mat-theme: mat.m2-define-light-theme((
-  color: (
-    primary: $tb-primary,
-    accent: $tb-accent
-  ),
-  typography: mat.m2-define-typography-config(
-    $button: mat.m2-define-typography-level(14px, 36px, 500, $letter-spacing: 0.03125em)
-  ),
-  density: 0
-));
+$tb-mat-theme: mat.m2-define-light-theme((color: (primary: $tb-primary,
+        accent: $tb-accent ),
+      typography: mat.m2-define-typography-config($button: mat.m2-define-typography-level(14px, 36px, 500, $letter-spacing: 0.03125em)),
+      density: 0));
 
 $tb-theme-system: m2-utils.get-system($tb-mat-theme);
-$tb-theme-system: map_merge($tb-theme-system, ( background: map_get(mat.$m2-grey-palette, 200) ));
+$tb-theme-system: map_merge($tb-theme-system, (background: map_get(mat.$m2-grey-palette, 200)));
 $tb-theme: map_merge($tb-mat-theme, (_mat-system: $tb-theme-system));
 
 $primary: mat.m2-get-color-from-palette($tb-primary);
@@ -92,8 +85,7 @@ $tb-dark-mat-indigo: (
   A200: #536dfe,
   A400: #3d5afe,
   A700: #304ffe,
-  contrast: (
-    50: rgba(black, 0.87),
+  contrast: (50: rgba(black, 0.87),
     100: rgba(black, 0.87),
     200: rgba(black, 0.87),
     300: rgba(black, 0.87),
@@ -112,17 +104,56 @@ $tb-dark-mat-indigo: (
 
 $tb-dark-primary: mat.m2-define-palette($tb-dark-mat-indigo);
 
-$tb-dark-theme: mat.m2-define-dark-theme((
-  color: (
-    primary: $tb-dark-primary,
-    accent: $tb-accent
-  ),
-  typography: mat.m2-define-typography-config(),
-  density: 0
-));
+$tb-dark-foreground: (
+  base: white,
+  divider: rgba(white, 0.12),
+  dividers: rgba(white, 0.12),
+  disabled: rgba(white, 0.5),
+  disabled-button: rgba(white, 0.5),
+  disabled-text: rgba(white, 0.5),
+  elevation: black,
+  hint-text: rgba(white, 0.5),
+  secondary-text: rgba(white, 0.7),
+  icon: white,
+  icons: white,
+  text: white,
+  slider-min: white,
+  slider-off: rgba(white, 0.3),
+  slider-off-active: rgba(white, 0.3)
+);
+
+$tb-dark-background: (
+  status-bar: black,
+  app-bar: black,
+  background: black,
+  hover: rgba(white, 0.04),
+  card: map_get($tb-dark-mat-indigo, 800),
+  dialog: map_get($tb-dark-mat-indigo, 800),
+  disabled-button: rgba(white, 0.12),
+  raised-button: map_get($tb-dark-mat-indigo, 800),
+  focused-button: rgba(white, 0.06),
+  selected-button: map_get($tb-dark-mat-indigo, 900),
+  selected-disabled-button: map_get($tb-dark-mat-indigo, 800),
+  disabled-button-toggle: black,
+  unselected-chip: map_get($tb-dark-mat-indigo, 700),
+  disabled-list-option: black,
+  tooltip: map_get($tb-dark-mat-indigo, 700),
+);
+
+$tb-dark-theme: mat.m2-define-dark-theme((color: (primary: $tb-dark-primary,
+        accent: $tb-accent ),
+      typography: mat.m2-define-typography-config(),
+      density: 0));
+
+$tb-dark-theme-color: map_get($tb-dark-theme, color);
+$tb-dark-theme-color: map_merge($tb-dark-theme-color, (foreground: $tb-dark-foreground,
+      background: $tb-dark-background));
+$tb-dark-theme: map_merge($tb-dark-theme, (color: $tb-dark-theme-color));
 
 $tb-dark-theme-system: m2-utils.get-system($tb-dark-theme);
-$tb-dark-theme-system: map_merge($tb-dark-theme-system, ( surface: map_get($tb-dark-mat-indigo, 800) ));
+$tb-dark-theme-system: map_merge($tb-dark-theme-system, (surface: map_get($tb-dark-background, card),
+      background: map_get($tb-dark-background, background),
+      app-bar: map_get($tb-dark-background, app-bar)));
 $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
 
 @mixin mat-fab-toolbar-theme($theme) {
@@ -137,18 +168,21 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
       background: mat.m2-get-color-from-palette($background, app-bar);
       color: mat.m2-get-color-from-palette($foreground, text);
     }
+
     &.mat-primary {
       .mat-fab-toolbar-background {
         background: mat.m2-get-color-from-palette($primary);
         color: mat.m2-get-color-from-palette($primary, default-contrast);
       }
     }
+
     &.mat-accent {
       .mat-fab-toolbar-background {
         background: mat.m2-get-color-from-palette($accent);
         color: mat.m2-get-color-from-palette($accent, default-contrast);
       }
     }
+
     &.mat-warn {
       .mat-fab-toolbar-background {
         background: mat.m2-get-color-from-palette($warn);
@@ -175,14 +209,17 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
       background: mat.m2-get-color-from-palette($background, app-bar);
       color: mat.m2-get-color-from-palette($foreground, text);
     }
+
     &.mat-primary {
       .mat-fab-toolbar-background {
         @include _mat-toolbar-inverse-color($primary);
       }
     }
+
     mat-toolbar {
       &.mat-primary {
         @include _mat-toolbar-inverse-color($primary);
+
         button.mat-mdc-icon-button {
           .mat-icon {
             color: mat.m2-get-color-from-palette($primary);
@@ -190,6 +227,7 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
         }
       }
     }
+
     .mat-mdc-fab {
       &.mat-primary {
         background: mat.m2-get-color-from-palette($primary, default-contrast);
@@ -204,7 +242,7 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
   $primary: map-get($theme, primary);
   $warn: map-get($theme, warn);
 
-  mat-toolbar{
+  mat-toolbar {
     &.mat-hue-3 {
       background-color: mat.m2-get-color-from-palette($primary, 'A100');
     }
@@ -227,6 +265,7 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
 
   ::-webkit-scrollbar-thumb {
     background: rgba(203, 203, 203, 0.8);
+
     &:hover {
       background: rgba(165, 165, 165, 0.65);
     }
@@ -245,4 +284,209 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
   @include mat.all-component-colors($tb-dark-theme);
   @include tb-components-theme($tb-dark-theme);
   @include overwrites.theme-overwrites($tb-dark-primary, $tb-dark-theme);
+
+  // Overrides for widgets background to be black (forcing containers)
+  .tb-widget,
+  .tb-link-button,
+  .tb-add-link-button,
+  .tb-timewindow-panel,
+  .tb-legend-config-panel,
+  .tb-filter-panel,
+  .tb-panel-container,
+  .tb-get-started .mat-vertical-content-container,
+  .tb-get-started .mat-vertical-stepper-header[aria-selected="true"] {
+    background: black !important;
+    background-color: black !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    color: white !important;
+  }
+
+  // Overrides for cards and buttons (allowing inline styles/classes to win)
+  .tb-feature-button,
+  .tb-version-info-container,
+  mat-card,
+  .mat-mdc-card {
+    background: black;
+    background-color: black;
+    border-color: rgba(255, 255, 255, 0.12);
+    color: white;
+  }
+
+  // Increase brightness of value cards/count widgets to make them pop against dark background
+  // "Shiny toward bright"
+  .tb-value-card-panel,
+  .tb-aggregated-value-card-panel,
+  .tb-count-panel {
+    filter: brightness(1) contrast(1.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  // Markdown Widget "Item Cards" (Rectangles) Overrides
+  // These are defined in widget JSONs, so we must override them here for dark mode.
+  a.tb-item-card {
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important; // Default fallback
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
+
+    .tb-item-title,
+    .tb-count {
+      color: white !important;
+    }
+
+    &.tb-inactive,
+    &.tb-critical {
+      background-color: rgba(209, 39, 48, 0.25) !important; // Brighter Red
+      border-color: rgba(209, 39, 48, 0.5) !important;
+    }
+
+    &.tb-active,
+    &.tb-assigned {
+      background-color: rgba(48, 86, 128, 0.4) !important; // Brighter Blue
+      border-color: rgba(48, 86, 128, 0.6) !important;
+    }
+
+    &.tb-total {
+      background-color: rgba(255, 255, 255, 0.1) !important; // Visible Gray
+      border-color: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+  }
+
+  // Gridster Background Override
+  #gridster-background {
+    background-color: #4d4d4d !important; // Dark Gray
+  }
+
+  // Adjust inner containers
+  .tb-link-icon-container,
+  .tb-feature-status {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  // Text color overrides
+  .tb-title,
+  .tb-title-link,
+  .tb-link-text,
+  .tb-feature-text,
+  .tb-version,
+  .tb-version-link,
+  .up-to-date-text,
+  .tb-usage-item,
+  .tb-usage-item-counts,
+  .tb-no-last-visited-dashboards-text,
+  .mat-header-cell,
+  .mat-cell,
+  .mat-mdc-header-cell,
+  .mat-mdc-cell,
+  .tb-cell,
+  .tb-get-started .mat-step-label,
+  .tb-get-started .mat-step-label.mat-step-label-selected,
+  .mat-step-label,
+  .mat-step-label.mat-step-label-selected,
+  .mat-step-label.mat-step-label-active,
+  .tb-get-started .mat-vertical-content p,
+  .tb-get-started .mat-vertical-content li {
+    color: white !important;
+  }
+
+  // Icon color overrides
+  .tb-title-icon,
+  .tb-info-icon,
+  .tb-link-icon,
+  .tb-add-icon,
+  .mat-icon,
+  .tb-title-link::after,
+  .tb-version-link::after {
+    color: white !important;
+  }
+
+  // Getting started code block fix
+  .tb-getting-started-code pre[class*=language-] {
+    background: rgba(255, 255, 255, 0.05) !important;
+
+    code,
+    span {
+      color: #e0e0e0 !important;
+    }
+  }
+
+  // Stepper overrides
+  .mat-stepper-vertical-line::before {
+    border-left-color: rgba(255, 255, 255, 0.12) !important;
+  }
+
+  .mat-step-header .mat-step-icon {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    color: white !important;
+  }
+
+  .mat-step-header .mat-step-icon-selected,
+  .mat-step-header .mat-step-icon-state-edit {
+    background-color: $tb-dark-primary-color !important;
+    color: white !important;
+  }
+
+  .mdc-linear-progress__buffer-bar {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+  }
+
+  // Toggle header overrides
+  .mat-button-toggle-group.mat-button-toggle-group-appearance-standard.tb-toggle-header {
+    background: rgba(255, 255, 255, 0.1) !important;
+
+    .mat-button-toggle.mat-button-toggle-appearance-standard {
+      color: rgba(255, 255, 255, 0.7) !important;
+
+      &.mat-button-toggle-checked {
+        .mat-button-toggle-button {
+          background-color: white !important;
+          color: black !important;
+          border-color: white !important;
+
+          .mat-button-toggle-label-content,
+          .mat-icon,
+          span {
+            color: black !important;
+          }
+        }
+      }
+    }
+  }
+
+  // Ensure titles in headers are white
+  .tb-card-header,
+  .tb-card-title {
+
+    .tb-title,
+    span,
+    div,
+    a {
+      color: white !important;
+    }
+
+    .tb-title-link {
+      color: white !important;
+    }
+  }
+
+  // Toolbar Override
+  mat-toolbar {
+    background-color: #2d2d2d !important;
+    color: white !important;
+  }
+
+  // Side Menu Overrides
+  .tb-side-menu {
+    a.mat-mdc-button.mat-mdc-button-base {
+      color: white !important;
+
+      .mat-icon {
+        color: white !important;
+      }
+    }
+  }
 }
