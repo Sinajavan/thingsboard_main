@@ -301,6 +301,45 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
     color: white !important;
   }
 
+  // Force Recent Dashboards list rows to dark gray
+  tb-recent-dashboards-widget {
+    .mat-mdc-row {
+      background-color: #5d5d5d !important;
+
+      .mat-mdc-cell,
+      .tb-cell,
+      a {
+        color: white !important;
+      }
+
+      &:hover {
+        background-color: #6d6d6d !important;
+      }
+    }
+  }
+
+  // Force Get Started unselected steps to dark gray
+  tb-getting-started-widget {
+    .tb-get-started {
+      background-color: #5d5d5d !important;
+      color: white !important;
+
+      .mat-step-header {
+
+        .mat-step-label,
+        .mat-step-icon {
+          color: white !important;
+        }
+      }
+
+      // Ensure selected step and content remain black
+      .mat-vertical-stepper-header[aria-selected="true"],
+      .mat-vertical-content-container {
+        background-color: black !important;
+      }
+    }
+  }
+
   // Overrides for cards and buttons (allowing inline styles/classes to win)
   .tb-feature-button,
   .tb-version-info-container,
@@ -491,6 +530,81 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
       .mat-icon {
         color: white !important;
       }
+    }
+  }
+
+  // Entity Table Page Overrides
+  .tb-entity-table-content {
+    background: black !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+
+    mat-toolbar {
+      background-color: transparent !important; // Let container background show or specific toolbar override
+    }
+  }
+
+  .mat-drawer-container {
+    background-color: #121212 !important; // deeply dark background behind drawer
+  }
+
+  mat-drawer.tb-details-drawer {
+    background-color: #1e1e1e !important; // Slightly lighter than black for elevation
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+
+    .tb-details-title {
+      color: white !important;
+    }
+
+    .tb-details-subtitle {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+  }
+
+  .mat-mdc-table {
+    background: black !important;
+
+    .mat-mdc-header-row {
+      background: black !important;
+    }
+
+    .mat-mdc-row {
+      background: black !important;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.08) !important;
+      }
+    }
+  }
+
+  // Paginator Overrides
+  .mat-mdc-paginator {
+    background: black !important;
+    color: white !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    .mat-mdc-paginator-container {
+      background: black !important;
+    }
+
+    .mat-mdc-paginator-page-size-label,
+    .mat-mdc-paginator-range-label {
+      color: white !important;
+    }
+
+    .mat-mdc-icon-button {
+      color: white !important;
+
+      &[disabled] {
+        color: rgba(255, 255, 255, 0.3) !important;
+      }
+    }
+
+    .mat-mdc-select-value {
+      color: white !important;
+    }
+
+    .mat-mdc-select-arrow {
+      color: white !important;
     }
   }
 

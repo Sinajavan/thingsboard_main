@@ -2,5 +2,6 @@
     "java.autobuild.enabled": false,
     "java.compile.nullAnalysis.mode": "disabled",
     "java.server.launchMode": "LightWeight",
-    "java.configuration.updateBuildConfiguration": "disabled"
+    "java.configuration.updateBuildConfiguration": "disabled",
+    "angular.enable-strict-mode-prompt": false
 }
