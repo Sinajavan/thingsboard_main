@@ -259,5 +259,16 @@
     .mat-vertical-content li {
       color: white !important;
     }
+
+    .tb-markdown-view .tb-getting-started-code {
+      pre[class*=language-] {
+        background: rgba(255, 255, 255, 0.05) !important;
+
+        code,
+        span {
+          color: #e0e0e0 !important;
+        }
+      }
+    }
   }
 }

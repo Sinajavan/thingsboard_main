@@ -22,12 +22,17 @@
     align-items: center;
     justify-content: center;
     padding: 24px;
-    &.horizontal, &.horizontal_reversed {
-       padding: 0 24px;
+
+    &.horizontal,
+    &.horizontal_reversed {
+      padding: 0 24px;
     }
-    > div:not(.tb-value-card-overlay), > tb-icon {
+
+    >div:not(.tb-value-card-overlay),
+    >tb-icon {
       z-index: 1;
     }
+
     .tb-value-card-overlay {
       position: absolute;
       top: 12px;
@@ -35,13 +40,15 @@
       bottom: 12px;
       right: 12px;
     }
-    > div.tb-value-card-title-panel {
+
+    >div.tb-value-card-title-panel {
       position: absolute;
       top: 12px;
       left: 12px;
       right: 12px;
       z-index: 2;
     }
+
     .tb-value-card-content {
       width: 100%;
       height: 100%;
@@ -51,6 +58,7 @@
       align-items: center;
       justify-content: center;
       gap: 16px;
+
       &.square {
         justify-content: space-evenly;
         gap: 0;
@@ -89,6 +97,14 @@
 
       .tb-value-card-value {
         white-space: nowrap;
+      }
+    }
+
+    :host-context(.tb-dark) {
+      .tb-value-card-panel {
+        filter: brightness(1) contrast(1.2);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       }
     }
   }

@@ -22,9 +22,11 @@
     align-items: center;
     justify-content: center;
     padding: 12px;
+
     &.tb-count-pointer {
       cursor: pointer;
     }
+
     .tb-count-panel-content {
       width: 100%;
       height: 100%;
@@ -33,6 +35,7 @@
       flex-direction: row;
       align-items: center;
       gap: 12px;
+
       .tb-count-panel-column {
         flex: 1;
         display: flex;
@@ -40,6 +43,7 @@
         gap: 12px;
         overflow: hidden;
       }
+
       .tb-count-panel-row {
         flex: 1;
         display: flex;
@@ -47,16 +51,19 @@
         align-items: center;
         gap: 12px;
       }
+
       .tb-count-icon-panel {
         position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
         .mat-icon {
           z-index: 1;
         }
       }
+
       .tb-count-icon-background-panel {
         position: absolute;
         inset: 0;
@@ -65,6 +72,7 @@
         align-items: center;
         justify-content: center;
       }
+
       .tb-count-label-value-panel {
         flex: 1;
         display: flex;
@@ -73,16 +81,26 @@
         align-items: flex-start;
         gap: 0;
         overflow: hidden;
+
         &.tb-count-layout-row {
           flex-direction: row;
           align-items: center;
         }
+
         .tb-count-label {
           overflow: hidden;
           text-overflow: ellipsis;
           width: 100%;
         }
       }
+    }
+  }
+
+  :host-context(.tb-dark) {
+    .tb-count-panel {
+      filter: brightness(1) contrast(1.2);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
   }
 }
