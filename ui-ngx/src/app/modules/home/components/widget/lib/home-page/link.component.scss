@@ -19,10 +19,12 @@
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.04);
     border-radius: 10px;
+
     &.edit-mode {
       border: 1px solid rgba(48, 86, 128, 0.32);
     }
   }
+
   .tb-link {
     height: 55px;
     display: flex;
@@ -33,10 +35,12 @@
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.04);
     border-radius: 10px;
+
     .tb-link-container {
       display: flex;
       flex-direction: row;
       align-items: center;
+
       .tb-link-icon-container {
         height: 40px;
         padding: 8px;
@@ -44,6 +48,7 @@
         border-radius: 6px;
         margin-right: 8px;
       }
+
       .tb-link-text {
         font-weight: 400;
         font-size: 14px;
@@ -53,9 +58,42 @@
       }
     }
   }
+
   .tb-edit-buttons {
     .mat-icon {
       color: rgba(0, 0, 0, 0.38);
+    }
+  }
+
+  :host-context(.tb-dark) {
+    .tb-edit-link {
+      background: black;
+      border-color: rgba(255, 255, 255, 0.12);
+
+      &.edit-mode {
+        border-color: rgba(255, 255, 255, 0.32);
+      }
+    }
+
+    .tb-link {
+      background: black;
+      border-color: rgba(255, 255, 255, 0.12);
+
+      .tb-link-container {
+        .tb-link-icon-container {
+          background: rgba(255, 255, 255, 0.1);
+        }
+
+        .tb-link-text {
+          color: white;
+        }
+      }
+    }
+
+    .tb-edit-buttons {
+      .mat-icon {
+        color: white;
+      }
     }
   }
 }

@@ -20,6 +20,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+
   .mat-toolbar.details-toolbar {
     padding: 0;
   }
@@ -30,11 +31,13 @@
     height: 100%;
     min-height: 60px;
     max-height: 120px;
+
     &.tb-details-title-header {
       min-width: 0;
       padding: 0 16px 0 8px;
     }
   }
+
   .tb-details-title {
     width: inherit;
     margin: 20px 8px 0 0;
@@ -52,7 +55,8 @@
     opacity: .8;
   }
 
-  .tb-details-title-text, .tb-details-subtitle {
+  .tb-details-title-text,
+  .tb-details-subtitle {
     width: inherit;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -62,6 +66,12 @@
   tb-dashboard {
     .tb-dashboard-content {
       background-color: $primary-hue-3 !important;
+    }
+  }
+
+  :host-context(body.tb-dark) {
+    .mat-content {
+      background-color: transparent !important;
     }
   }
 }

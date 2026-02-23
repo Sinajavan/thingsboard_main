@@ -89,6 +89,26 @@
   }
 }
 
+:host-context(.tb-dark) {
+  .settings-card {
+    background: black;
+
+    .details-toolbar {
+      background: black;
+      border-bottom-color: rgba(255, 255, 255, 0.12);
+
+      .tb-details-title {
+        color: white;
+      }
+
+      .tb-details-subtitle {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+
+}
+
 :host ::ng-deep {
   .tb-help {
     .mat-mdc-icon-button.mat-primary {
@@ -100,15 +120,16 @@
     position: relative;
     overflow: hidden;
 
-    > .mat-mdc-tab-group {
-      > .mat-mdc-tab-body-wrapper {
+    >.mat-mdc-tab-group {
+      >.mat-mdc-tab-body-wrapper {
         position: absolute;
         top: 49px;
         left: 0;
         right: 0;
         bottom: 0;
       }
-      > .mat-mdc-tab-header {
+
+      >.mat-mdc-tab-header {
         .mat-mdc-tab {
           min-width: 40px;
         }

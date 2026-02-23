@@ -31,4 +31,8 @@
       }
     }
   }
+
+  :host-context(body.tb-dark) & {
+    background-color: transparent;
+  }
 }

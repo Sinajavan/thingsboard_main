@@ -49,28 +49,34 @@
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.04);
     border-radius: 10px;
+
     @media #{$mat-md-lg} {
       height: 18px;
       padding: 0 8px;
     }
+
     &:hover {
       border: 1px solid rgba(0, 0, 0, 0.12);
       box-shadow: 0 4px 10px rgba(23, 33, 90, 0.08);
     }
+
     .tb-link-container {
       display: flex;
       flex-direction: row;
       align-items: center;
+
       .tb-link-icon-container {
         height: 40px;
         padding: 8px;
         background: #F3F6FA;
         border-radius: 6px;
         margin-right: 8px;
+
         @media #{$mat-md-lg} {
           display: none;
         }
       }
+
       .tb-link-text {
         font-weight: 400;
         font-size: 14px;
@@ -80,6 +86,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+
         @media #{$mat-md-lg} {
           font-size: 11px;
           line-height: 16px;
@@ -99,21 +106,59 @@
     padding: 8px;
     border: 2px dashed rgba(0, 0, 0, 0.08);
     border-radius: 10px;
+
     @media #{$mat-md-lg} {
       height: 18px;
       padding: 0 8px;
+
       .tb-add-icon {
         height: 12px;
         width: 12px;
         font-size: 12px;
       }
     }
+
     .tb-add-icon {
       color: rgba(0, 0, 0, 0.12);
     }
+
     &:hover {
       .tb-add-icon {
         color: rgba(0, 0, 0, 0.38);
+      }
+    }
+  }
+
+  :host-context(.tb-dark) {
+    .tb-title-icon {
+      color: white;
+    }
+
+    .tb-link-button {
+      background: black;
+      border-color: rgba(255, 255, 255, 0.12);
+
+      .tb-link-container {
+        .tb-link-icon-container {
+          background: rgba(255, 255, 255, 0.1);
+        }
+
+        .tb-link-text {
+          color: white;
+        }
+      }
+    }
+
+    .tb-add-link-button {
+      background: black;
+      border-color: rgba(255, 255, 255, 0.12);
+
+      .tb-add-icon {
+        color: rgba(255, 255, 255, 0.38);
+      }
+
+      &:hover .tb-add-icon {
+        color: white;
       }
     }
   }

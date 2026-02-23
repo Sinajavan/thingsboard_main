@@ -127,8 +127,8 @@ $tb-dark-background: (
   app-bar: black,
   background: black,
   hover: rgba(white, 0.04),
-  card: map_get($tb-dark-mat-indigo, 800),
-  dialog: map_get($tb-dark-mat-indigo, 800),
+  card: black,
+  dialog: black,
   disabled-button: rgba(white, 0.12),
   raised-button: map_get($tb-dark-mat-indigo, 800),
   focused-button: rgba(white, 0.06),
@@ -287,8 +287,6 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
 
   // Overrides for widgets background to be black (forcing containers)
   .tb-widget,
-  .tb-link-button,
-  .tb-add-link-button,
   .tb-timewindow-panel,
   .tb-legend-config-panel,
   .tb-filter-panel,

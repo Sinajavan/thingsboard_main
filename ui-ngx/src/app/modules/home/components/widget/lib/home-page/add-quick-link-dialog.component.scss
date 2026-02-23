@@ -16,14 +16,29 @@
 :host {
   .tb-add-quick-link-dialog {
     width: 480px;
+
     .mat-toolbar-single-row {
       padding: 0 24px;
     }
+
     h2 {
       color: rgba(0, 0, 0, 0.76);
     }
+
     .mat-icon {
       color: rgba(0, 0, 0, 0.54);
+    }
+  }
+
+  :host-context(.tb-dark) {
+    .tb-add-quick-link-dialog {
+      h2 {
+        color: white;
+      }
+
+      .mat-icon {
+        color: white;
+      }
     }
   }
 }
