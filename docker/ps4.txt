@@ -1,0 +1,26 @@
+﻿NAMES                         STATUS                           PORTS
+haproxy-certbot               Exited (137) About an hour ago   
+docker-tb-mqtt-transport1-1   Exited (1) About an hour ago     
+docker-tb-http-transport1-1   Exited (1) About an hour ago     
+docker-tb-lwm2m-transport-1   Exited (1) About an hour ago     
+docker-tb-vc-executor2-1      Exited (1) About an hour ago     
+docker-tb-coap-transport-1    Exited (1) About an hour ago     
+docker-tb-vc-executor1-1      Exited (1) About an hour ago     
+docker-tb-mqtt-transport2-1   Exited (1) About an hour ago     
+docker-tb-http-transport2-1   Exited (1) About an hour ago     
+docker-tb-snmp-transport-1    Exited (1) About an hour ago     
+docker-tb-js-executor-1       Exited (0) About an hour ago     
+docker-tb-js-executor-8       Exited (0) About an hour ago     
+docker-tb-js-executor-2       Exited (0) About an hour ago     
+docker-tb-js-executor-7       Exited (0) About an hour ago     
+docker-tb-js-executor-4       Exited (0) About an hour ago     
+docker-tb-js-executor-6       Exited (0) About an hour ago     
+docker-tb-js-executor-9       Exited (0) About an hour ago     
+docker-tb-js-executor-3       Exited (0) About an hour ago     
+docker-tb-js-executor-5       Exited (0) About an hour ago     
+docker-tb-js-executor-10      Exited (0) About an hour ago     
+docker-kafka-1                Exited (143) About an hour ago   
+docker-postgres-1             Exited (0) About an hour ago     
+docker-zookeeper-1            Exited (143) About an hour ago   
+docker-valkey-1               Exited (0) About an hour ago     
+thingsboards-postgres-1       Exited (0) 2 hours ago           

@@ -1,0 +1,428 @@
+﻿docker-compose :  Container 
+docker-zookeeper-1 Running 
+At line:1 char:1
++ docker-compose -f 
+docker-compose.yml -f 
+docker-compose.valkey.yml -f  
+...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo          : 
+    NotSpecified: ( Containe  
+  r docker-zookeeper-1 Runn   
+ ing :String) [], RemoteEx    
+ception
+    + FullyQualifiedErrorId : 
+    NativeCommandError
+ 
+ Container docker-valkey-1 
+Running 
+ Container docker-postgres-1 
+Running 
+ Container docker-kafka-1 
+Running 
+ Container 
+docker-tb-js-executor-8 
+Starting 
+ Container 
+docker-tb-js-executor-8 
+Started 
+ Container 
+docker-tb-js-executor-2 
+Starting 
+ Container 
+docker-tb-js-executor-2 
+Started 
+ Container 
+docker-tb-js-executor-1 
+Starting 
+ Container 
+docker-tb-js-executor-1 
+Started 
+ Container 
+docker-tb-js-executor-7 
+Starting 
+ Container 
+docker-tb-js-executor-7 
+Started 
+ Container 
+docker-tb-js-executor-9 
+Starting 
+ Container 
+docker-tb-js-executor-9 
+Started 
+ Container 
+docker-tb-js-executor-4 
+Starting 
+ Container 
+docker-tb-js-executor-4 
+Started 
+ Container 
+docker-tb-js-executor-6 
+Starting 
+ Container 
+docker-tb-js-executor-6 
+Started 
+ Container 
+docker-tb-js-executor-10 
+Starting 
+ Container 
+docker-tb-js-executor-10 
+Started 
+ Container 
+docker-tb-js-executor-5 
+Starting 
+ Container 
+docker-tb-js-executor-5 
+Started 
+ Container 
+docker-tb-js-executor-3 
+Starting 
+ Container 
+docker-tb-js-executor-3 
+Started 
+ Container 
+docker-tb-rule-engine1-1 
+Starting 
+ Container 
+docker-tb-rule-engine1-1 
+Started 
+ Container docker-tb-core1-run
+-3d77433ffaac Creating 
+ Container docker-tb-core1-run
+-3d77433ffaac Created 
+Starting ThingsBoard (Debug Mode)...
+Using default memory settings
+Adding debug agent
+Starting ThingsBoard Installation...
+JAVA_OPTS=-Xmx2048M -Xms2048M -Xss384k -XX:+AlwaysPreTouch -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -Dloader.main=org.thingsboard.server.ThingsboardInstallApplication -Dinstall.load_demo=true -Dplatform=deb -Dinstall.data_dir=/usr/share/thingsboard/data -Dspring.config.name=thingsboard -Dspring.jpa.hibernate.ddl-auto=none -Dlogging.config=/config/logback.xml -Dthingsboard.log.dir=/var/log/thingsboard -DTB_KAFKA_SERVERS=kafka:9092
+Listening for transport dt_socket at address: 5005
+00:50:35,251 |-INFO in ch.qos.logback.classic.LoggerContext[default] - This is logback-classic version 1.5.18
+00:50:35,260 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - Here is a list of configurators discovered as a service, by rank: 
+00:50:35,260 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe -   org.springframework.boot.logging.logback.RootLogLevelConfigurator
+00:50:35,260 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - They will be invoked in order until ExecutionStatus.DO_NOT_INVOKE_NEXT_IF_ANY is returned.
+00:50:35,260 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - Constructed configurator of type class org.springframework.boot.logging.logback.RootLogLevelConfigurator
+00:50:35,265 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - org.springframework.boot.logging.logback.RootLogLevelConfigurator.configure() call lasted 1 milliseconds. ExecutionStatus=INVOKE_NEXT_IF_ANY
+00:50:35,265 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - Trying to configure with ch.qos.logback.classic.joran.SerializedModelConfigurator
+00:50:35,267 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - Constructed configurator of type class ch.qos.logback.classic.joran.SerializedModelConfigurator
+00:50:35,282 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.scmo]
+00:50:35,286 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.scmo]
+00:50:35,286 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - ch.qos.logback.classic.joran.SerializedModelConfigurator.configure() call lasted 19 milliseconds. ExecutionStatus=INVOKE_NEXT_IF_ANY
+00:50:35,286 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+00:50:35,287 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+00:50:35,291 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+00:50:35,293 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/config/logback.xml]
+00:50:35,299 |-WARN in ch.qos.logback.classic.util.DefaultJoranConfigurator@93081b6 - Resource [logback.xml] occurs multiple times on the classpath.
+00:50:35,299 |-WARN in ch.qos.logback.classic.util.DefaultJoranConfigurator@93081b6 - Resource [logback.xml] occurs at [file:/usr/share/thingsboard/conf/logback.xml]
+00:50:35,299 |-WARN in ch.qos.logback.classic.util.DefaultJoranConfigurator@93081b6 - Resource [logback.xml] occurs at [file:/config/logback.xml]
+00:50:35,572 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Registering a new ReconfigureOnChangeTask ReconfigureOnChangeTask(born:1771980635571)
+00:50:35,575 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Will scan for changes in [ConfigurationWatchList(mainURL=file:/config/logback.xml, fileWatchList={/config/logback.xml}, urlWatchList=[})] 
+00:50:35,575 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Setting ReconfigureOnChangeTask scanning period to 10 seconds
+00:50:35,579 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [fileLogAppender]
+00:50:35,579 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+00:50:35,595 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@cd1e646 - value "/var/log/thingsboard/tb-core1/thingsboard.log" substituted for "/var/log/thingsboard/${TB_SERVICE_ID}/thingsboard.log"
+00:50:35,601 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@cd1e646 - value "/var/log/thingsboard/tb-core1/thingsboard.%d{yyyy-MM-dd}.%i.log" substituted for "/var/log/thingsboard/${TB_SERVICE_ID}/thingsboard.%d{yyyy-MM-dd}.%i.log"
+00:50:35,606 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@2074658615 - setting totalSizeCap to 3 GB
+00:50:35,611 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@2074658615 - Archive files will be limited to [100 MB] each.
+00:50:35,611 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@2074658615 - No compression will be used
+00:50:35,645 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@2074658615 - Will use the pattern /var/log/thingsboard/tb-core1/thingsboard.%d{yyyy-MM-dd}.%i.log for the active file
+00:50:35,664 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFileNamingAndTriggeringPolicy@1890516e - The date pattern is 'yyyy-MM-dd' from file name pattern '/var/log/thingsboard/tb-core1/thingsboard.%d{yyyy-MM-dd}.%i.log'.
+00:50:35,664 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFileNamingAndTriggeringPolicy@1890516e - Roll-over at midnight.
+00:50:35,672 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFileNamingAndTriggeringPolicy@1890516e - Setting initial period to 2026-02-25T00:43:24.023Z
+00:50:35,680 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+00:50:35,744 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[fileLogAppender] - Active log file name: /var/log/thingsboard/tb-core1/thingsboard.log
+00:50:35,749 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[fileLogAppender] - Setting currentFileLength to 1678154 for /var/log/thingsboard/tb-core1/thingsboard.log
+00:50:35,749 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[fileLogAppender] - File property is set to [/var/log/thingsboard/tb-core1/thingsboard.log]
+00:50:35,754 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+00:50:35,754 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+00:50:35,758 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+00:50:35,758 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - BEWARE: Writing to the console can be very slow. Avoid logging to the 
+00:50:35,758 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - console in production environments, especially in high volume systems.
+00:50:35,758 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also https://logback.qos.ch/codes.html#slowConsole
+00:50:35,759 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.thingsboard.server] to INFO
+00:50:35,759 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.google.common.util.concurrent.AggregateFuture] to OFF
+00:50:35,759 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.kafka.common.utils.AppInfoParser] to WARN
+00:50:35,759 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.kafka.clients] to WARN
+00:50:35,759 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+00:50:35,759 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [fileLogAppender] to Logger[ROOT]
+00:50:35,760 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+00:50:35,760 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@15a04efb - End of configuration.
+00:50:35,761 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@16c069df - Registering current configuration as safe fallback point
+00:50:35,761 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 474 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+00:50:35,251 |-INFO in ch.qos.logback.classic.LoggerContext[default] - This is logback-classic version 1.5.18
+00:50:35,260 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - Here is a list of configurators discovered as a service, by rank: 
+00:50:35,260 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe -   org.springframework.boot.logging.logback.RootLogLevelConfigurator
+00:50:35,260 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - They will be invoked in order until ExecutionStatus.DO_NOT_INVOKE_NEXT_IF_ANY is returned.
+00:50:35,260 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - Constructed configurator of type class org.springframework.boot.logging.logback.RootLogLevelConfigurator
+00:50:35,265 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - org.springframework.boot.logging.logback.RootLogLevelConfigurator.configure() call lasted 1 milliseconds. ExecutionStatus=INVOKE_NEXT_IF_ANY
+00:50:35,265 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - Trying to configure with ch.qos.logback.classic.joran.SerializedModelConfigurator
+00:50:35,267 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - Constructed configurator of type class ch.qos.logback.classic.joran.SerializedModelConfigurator
+00:50:35,282 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.scmo]
+00:50:35,286 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.scmo]
+00:50:35,286 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - ch.qos.logback.classic.joran.SerializedModelConfigurator.configure() call lasted 19 milliseconds. ExecutionStatus=INVOKE_NEXT_IF_ANY
+00:50:35,286 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+00:50:35,287 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+00:50:35,291 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+00:50:35,293 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/config/logback.xml]
+00:50:35,299 |-WARN in ch.qos.logback.classic.util.DefaultJoranConfigurator@93081b6 - Resource [logback.xml] occurs multiple times on the classpath.
+00:50:35,299 |-WARN in ch.qos.logback.classic.util.DefaultJoranConfigurator@93081b6 - Resource [logback.xml] occurs at [file:/usr/share/thingsboard/conf/logback.xml]
+00:50:35,299 |-WARN in ch.qos.logback.classic.util.DefaultJoranConfigurator@93081b6 - Resource [logback.xml] occurs at [file:/config/logback.xml]
+00:50:35,572 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Registering a new ReconfigureOnChangeTask ReconfigureOnChangeTask(born:1771980635571)
+00:50:35,575 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Will scan for changes in [ConfigurationWatchList(mainURL=file:/config/logback.xml, fileWatchList={/config/logback.xml}, urlWatchList=[})] 
+00:50:35,575 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Setting ReconfigureOnChangeTask scanning period to 10 seconds
+00:50:35,579 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [fileLogAppender]
+00:50:35,579 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+00:50:35,595 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@cd1e646 - value "/var/log/thingsboard/tb-core1/thingsboard.log" substituted for "/var/log/thingsboard/${TB_SERVICE_ID}/thingsboard.log"
+00:50:35,601 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@cd1e646 - value "/var/log/thingsboard/tb-core1/thingsboard.%d{yyyy-MM-dd}.%i.log" substituted for "/var/log/thingsboard/${TB_SERVICE_ID}/thingsboard.%d{yyyy-MM-dd}.%i.log"
+00:50:35,606 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@2074658615 - setting totalSizeCap to 3 GB
+00:50:35,611 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@2074658615 - Archive files will be limited to [100 MB] each.
+00:50:35,611 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@2074658615 - No compression will be used
+00:50:35,645 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@2074658615 - Will use the pattern /var/log/thingsboard/tb-core1/thingsboard.%d{yyyy-MM-dd}.%i.log for the active file
+00:50:35,664 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFileNamingAndTriggeringPolicy@1890516e - The date pattern is 'yyyy-MM-dd' from file name pattern '/var/log/thingsboard/tb-core1/thingsboard.%d{yyyy-MM-dd}.%i.log'.
+00:50:35,664 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFileNamingAndTriggeringPolicy@1890516e - Roll-over at midnight.
+00:50:35,672 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFileNamingAndTriggeringPolicy@1890516e - Setting initial period to 2026-02-25T00:43:24.023Z
+00:50:35,680 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+00:50:35,744 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[fileLogAppender] - Active log file name: /var/log/thingsboard/tb-core1/thingsboard.log
+00:50:35,749 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[fileLogAppender] - Setting currentFileLength to 1678154 for /var/log/thingsboard/tb-core1/thingsboard.log
+00:50:35,749 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[fileLogAppender] - File property is set to [/var/log/thingsboard/tb-core1/thingsboard.log]
+00:50:35,754 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+00:50:35,754 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+00:50:35,758 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+00:50:35,758 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - BEWARE: Writing to the console can be very slow. Avoid logging to the 
+00:50:35,758 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - console in production environments, especially in high volume systems.
+00:50:35,758 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also https://logback.qos.ch/codes.html#slowConsole
+00:50:35,759 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.thingsboard.server] to INFO
+00:50:35,759 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.google.common.util.concurrent.AggregateFuture] to OFF
+00:50:35,759 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.kafka.common.utils.AppInfoParser] to WARN
+00:50:35,759 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.kafka.clients] to WARN
+00:50:35,759 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+00:50:35,759 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [fileLogAppender] to Logger[ROOT]
+00:50:35,760 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+00:50:35,760 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@15a04efb - End of configuration.
+00:50:35,761 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@16c069df - Registering current configuration as safe fallback point
+00:50:35,761 |-INFO in ch.qos.logback.classic.util.ContextInitializer@24c22fe - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 474 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+00:50:36,677 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Registering a new ReconfigureOnChangeTask ReconfigureOnChangeTask(born:1771980636677)
+00:50:36,677 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Will scan for changes in [ConfigurationWatchList(mainURL=file:/config/logback.xml, fileWatchList={/config/logback.xml}, urlWatchList=[})] 
+00:50:36,677 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Setting ReconfigureOnChangeTask scanning period to 10 seconds
+00:50:36,678 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [fileLogAppender]
+00:50:36,678 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+00:50:36,678 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@4e31c3ec - value "/var/log/thingsboard/tb-core1/thingsboard.log" substituted for "/var/log/thingsboard/${TB_SERVICE_ID}/thingsboard.log"
+00:50:36,678 |-INFO in ch.qos.logback.core.model.processor.ModelInterpretationContext@4e31c3ec - value "/var/log/thingsboard/tb-core1/thingsboard.%d{yyyy-MM-dd}.%i.log" substituted for "/var/log/thingsboard/${TB_SERVICE_ID}/thingsboard.%d{yyyy-MM-dd}.%i.log"
+00:50:36,678 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@827843776 - setting totalSizeCap to 3 GB
+00:50:36,679 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@827843776 - Archive files will be limited to [100 MB] each.
+00:50:36,679 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@827843776 - No compression will be used
+00:50:36,679 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@827843776 - Will use the pattern /var/log/thingsboard/tb-core1/thingsboard.%d{yyyy-MM-dd}.%i.log for the active file
+00:50:36,680 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFileNamingAndTriggeringPolicy@6eaa21d8 - The date pattern is 'yyyy-MM-dd' from file name pattern '/var/log/thingsboard/tb-core1/thingsboard.%d{yyyy-MM-dd}.%i.log'.
+00:50:36,680 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFileNamingAndTriggeringPolicy@6eaa21d8 - Roll-over at midnight.
+00:50:36,684 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFileNamingAndTriggeringPolicy@6eaa21d8 - Setting initial period to 2026-02-25T00:43:24.023Z
+00:50:36,687 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+00:50:36,688 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[fileLogAppender] - Active log file name: /var/log/thingsboard/tb-core1/thingsboard.log
+00:50:36,691 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[fileLogAppender] - Setting currentFileLength to 1678154 for /var/log/thingsboard/tb-core1/thingsboard.log
+00:50:36,691 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[fileLogAppender] - File property is set to [/var/log/thingsboard/tb-core1/thingsboard.log]
+00:50:36,693 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+00:50:36,693 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+00:50:36,694 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+00:50:36,694 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - BEWARE: Writing to the console can be very slow. Avoid logging to the 
+00:50:36,694 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - console in production environments, especially in high volume systems.
+00:50:36,694 |-INFO in ch.qos.logback.core.ConsoleAppender[STDOUT] - See also https://logback.qos.ch/codes.html#slowConsole
+00:50:36,694 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.thingsboard.server] to INFO
+00:50:36,694 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@328902d5 - Propagating INFO level on Logger[org.thingsboard.server] onto the JUL framework
+00:50:36,695 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.google.common.util.concurrent.AggregateFuture] to OFF
+00:50:36,695 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@328902d5 - Propagating OFF level on Logger[com.google.common.util.concurrent.AggregateFuture] onto the JUL framework
+00:50:36,696 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.kafka.common.utils.AppInfoParser] to WARN
+00:50:36,696 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@328902d5 - Propagating WARN level on Logger[org.apache.kafka.common.utils.AppInfoParser] onto the JUL framework
+00:50:36,696 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.kafka.clients] to WARN
+00:50:36,696 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@328902d5 - Propagating WARN level on Logger[org.apache.kafka.clients] onto the JUL framework
+00:50:36,696 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+00:50:36,696 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@328902d5 - Propagating INFO level on Logger[ROOT] onto the JUL framework
+00:50:36,696 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [fileLogAppender] to Logger[ROOT]
+00:50:36,696 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+00:50:36,696 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@72e789cb - End of configuration.
+00:50:36,696 |-INFO in org.springframework.boot.logging.logback.SpringBootJoranConfigurator@7c1812b3 - Registering current configuration as safe fallback point
+
+  _____ _     _                 ____                      _
+ |_   _| |__ (_)_ __   __ _ ___| __ )  ___   __ _ _ __ __| |
+   | | | '_ \| | '_ \ / _` / __|  _ \ / _ \ / _` | '__/ _` |
+   | | | | | | | | | | (_| \__ \ |_) | (_) | (_| | | | (_| |
+   |_| |_| |_|_|_| |_|\__, |___/____/ \___/ \__,_|_|  \__,_|
+                      |___/
+
+ ===========================================================
+ :: ThingsBoard ::       (v4.4.0-SNAPSHOT)
+ ===========================================================
+
+2026-02-25 00:50:36,776 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-02-25 00:50:36,899 [main] INFO  o.t.s.ThingsboardInstallApplication - Starting ThingsboardInstallApplication v4.4.0-SNAPSHOT using Java 25.0.2 with PID 1 (/usr/share/thingsboard/bin/thingsboard.jar started by thingsboard in /)
+2026-02-25 00:50:36,901 [main] INFO  o.t.s.ThingsboardInstallApplication - The following 1 profile is active: "install"
+2026-02-25 00:50:40,044 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-25 00:50:40,045 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in LAZY mode.
+2026-02-25 00:50:40,349 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 286 ms. Found 7 JPA repository interfaces.
+2026-02-25 00:50:40,355 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-25 00:50:40,356 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in LAZY mode.
+2026-02-25 00:50:40,805 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 446 ms. Found 58 JPA repository interfaces.
+2026-02-25 00:50:40,808 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-25 00:50:40,808 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in LAZY mode.
+2026-02-25 00:50:40,830 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 1 JPA repository interface.
+2026-02-25 00:50:40,836 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-25 00:50:40,836 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in LAZY mode.
+2026-02-25 00:50:40,853 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 1 JPA repository interface.
+2026-02-25 00:50:42,021 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2026-02-25 00:50:42,044 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2026-02-25 00:50:43,432 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-25 00:50:43,453 [main] INFO  o.a.coyote.http11.Http11NioProtocol - The ["http-nio-0.0.0.0-8080"] connector has been configured to support HTTP upgrade to [h2c]
+2026-02-25 00:50:43,455 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-02-25 00:50:43,458 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-25 00:50:43,459 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-02-25 00:50:43,509 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-25 00:50:43,510 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6511 ms
+2026-02-25 00:50:44,148 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-25 00:50:44,332 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-02-25 00:50:44,433 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-25 00:50:44,731 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-25 00:50:45,033 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6461c673
+2026-02-25 00:50:45,036 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-25 00:50:45,102 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 12.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-25 00:50:45,729 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-25 00:50:48,954 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-25 00:50:48,998 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-25 00:50:51,015 [main] INFO  o.t.s.d.a.CachedAttributesService - Going to use cacheExecutorService for the remote cache type redis
+2026-02-25 00:50:51,063 [main] INFO  o.t.s.d.s.CachedRedisSqlTimeseriesLatestDao - Init Redis cache-aside SQL Timeseries Latest DAO
+2026-02-25 00:50:51,725 [main] INFO  o.t.s.d.s.NamedParameterJdbcTemplateConfiguration - Set jdbcTemplate query timeout [30] second(s)
+2026-02-25 00:50:52,653 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [public/index.html]
+2026-02-25 00:50:54,572 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-02-25 00:50:54,939 [main] INFO  o.s.i.endpoint.EventDrivenConsumer - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-02-25 00:50:54,942 [main] INFO  o.s.i.c.PublishSubscribeChannel - Channel 'application.errorChannel' has 1 subscriber(s).
+2026-02-25 00:50:54,942 [main] INFO  o.s.i.endpoint.EventDrivenConsumer - started bean '_org.springframework.integration.errorLogger'
+WARNING: A terminally 
+deprecated method in 
+sun.misc.Unsafe has been 
+called
+WARNING: sun.misc.Unsafe::allo
+cateMemory has been called by 
+io.netty.util.internal.Platfor
+mDependent0$2 (jar:nested:/usr
+/share/thingsboard/bin/thingsb
+oard.jar/!BOOT-INF/lib/netty-c
+ommon-4.1.128.Final.jar!/)
+WARNING: Please consider 
+reporting this to the 
+maintainers of class io.netty.
+util.internal.PlatformDependen
+t0$2
+WARNING: sun.misc.Unsafe::allo
+cateMemory will be removed in 
+a future release
+2026-02-25 00:50:55,024 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-02-25 00:50:55,045 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-25 00:50:55,061 [main] INFO  o.t.s.ThingsboardInstallApplication - Started ThingsboardInstallApplication in 19.154 seconds (process running for 20.704)
+2026-02-25 00:50:55,072 [main] INFO  o.t.s.i.ThingsboardInstallService - Starting ThingsBoard Installation...
+2026-02-25 00:50:55,073 [main] INFO  o.t.s.i.ThingsboardInstallService - Installing DataBase schema for entities...
+2026-02-25 00:50:55,074 [main] INFO  o.t.s.s.i.SqlAbstractDatabaseSchemaService - Installing SQL DataBase schema part: schema-entities.sql
+2026-02-25 00:50:56,490 [main] INFO  o.t.s.s.i.SqlAbstractDatabaseSchemaService - Installing SQL DataBase schema indexes part: schema-entities-idx.sql
+2026-02-25 00:50:56,809 [main] INFO  o.t.s.s.i.SqlEntityDatabaseSchemaService - Installing SQL DataBase schema PostgreSQL specific indexes part: schema-entities-idx-psql-addon.sql
+2026-02-25 00:50:56,923 [main] INFO  o.t.s.s.i.SqlEntityDatabaseSchemaService - Installing SQL DataBase schema views: schema-views.sql
+2026-02-25 00:50:57,016 [main] INFO  o.t.s.s.i.SqlEntityDatabaseSchemaService - Installing SQL DataBase schema functions: schema-functions.sql
+2026-02-25 00:50:57,181 [main] INFO  o.t.s.s.i.SqlAbstractDatabaseSchemaService - Successfully executed query: DROP VIEW IF EXISTS device_info_view CASCADE;
+2026-02-25 00:51:02,254 [main] INFO  o.t.s.s.i.SqlAbstractDatabaseSchemaService - Successfully executed query: CREATE OR REPLACE VIEW device_info_view AS SELECT * FROM device_info_active_attribute_view;
+2026-02-25 00:51:07,255 [main] INFO  o.t.s.i.ThingsboardInstallService - Installing DataBase schema for timeseries...
+2026-02-25 00:51:07,256 [main] INFO  o.t.s.s.i.SqlAbstractDatabaseSchemaService - Installing SQL DataBase schema part: schema-ts-psql.sql
+2026-02-25 00:51:07,437 [main] INFO  o.t.s.s.i.SqlAbstractDatabaseSchemaService - Successfully executed query: CREATE TABLE IF NOT EXISTS ts_kv_indefinite PARTITION OF ts_kv DEFAULT;
+2026-02-25 00:51:12,438 [main] INFO  o.t.s.i.ThingsboardInstallService - Loading system data...
+2026-02-25 00:51:12,864 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+WARNING: A restricted method 
+in java.lang.System has been 
+called
+WARNING: 
+java.lang.System::load has 
+been called by com.kenai.jffi.
+internal.StubLoader in an 
+unnamed module (jar:nested:/us
+r/share/thingsboard/bin/things
+board.jar/!BOOT-INF/lib/jffi-1
+.3.11.jar!/)
+WARNING: Use --enable-native-a
+ccess=ALL-UNNAMED to avoid a 
+warning for callers in this 
+module
+WARNING: Restricted methods 
+will be blocked in a future 
+release unless native access 
+is enabled
+
+2026-02-25 00:51:14,503 [main] INFO  c.d.oss.driver.api.core.uuid.Uuids - PID obtained through native call to getpid(): 1
+2026-02-25 00:51:15,368 [main] INFO  org.owasp.validator.html.Policy - Attempting to load AntiSamy policy from an input stream.
+2026-02-25 00:51:15,569 [main] WARN  org.owasp.validator.html.Policy - The directive "noopenerAndNoreferrerAnchors" is enabled by default, but disabled in this policy. It is recommended to leave it enabled to prevent reverse tabnabbing attacks.
+2026-02-25 00:51:15,730 [main] ERROR o.t.s.i.ThingsboardInstallService - Unexpected error during ThingsBoard installation!
+java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because the return value of "org.thingsboard.server.common.data.security.model.SecuritySettings.getUserActivationTokenTtl()" is null
+	at org.thingsboard.server.dao.user.UserServiceImpl.generateUserActivationToken(UserServiceImpl.java:328)
+	at org.thingsboard.server.dao.user.UserServiceImpl.doSaveUser(UserServiceImpl.java:209)
+	at org.thingsboard.server.dao.user.UserServiceImpl.lambda$saveUser$9(UserServiceImpl.java:184)
+	at org.thingsboard.server.dao.entity.AbstractEntityService.saveEntity(AbstractEntityService.java:116)
+	at org.thingsboard.server.dao.user.UserServiceImpl.saveUser(UserServiceImpl.java:184)
+	at org.thingsboard.server.dao.user.UserServiceImpl.saveUser(UserServiceImpl.java:178)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at org.thingsboard.server.dao.user.UserServiceImpl$$SpringCGLIB$$0.saveUser(<generated>)
+	at org.thingsboard.server.service.install.DefaultSystemDataLoaderService.createUser(DefaultSystemDataLoaderService.java:577)
+	at org.thingsboard.server.service.install.DefaultSystemDataLoaderService.createSysAdmin(DefaultSystemDataLoaderService.java:201)
+	at org.thingsboard.server.install.ThingsboardInstallService.performInstall(ThingsboardInstallService.java:159)
+	at org.thingsboard.server.ThingsboardInstallApplication.main(ThingsboardInstallApplication.java:48)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64)
+	at org.springframework.boot.loader.launch.PropertiesLauncher.main(PropertiesLauncher.java:580)
+2026-02-25 00:51:15,738 [main] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-25 00:51:15,740 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-02-25 00:51:15,741 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-25 00:51:15,741 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-0.0.0.0-8080"]
+2026-02-25 00:51:15,774 [main] INFO  o.s.i.endpoint.EventDrivenConsumer - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-02-25 00:51:15,774 [main] INFO  o.s.i.c.PublishSubscribeChannel - Channel 'application.errorChannel' has 0 subscriber(s).
+2026-02-25 00:51:15,775 [main] INFO  o.s.i.endpoint.EventDrivenConsumer - stopped bean '_org.springframework.integration.errorLogger'
+2026-02-25 00:51:15,785 [sql-queue-2-ts latest-14-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [TS Latest] Queue polling was interrupted
+2026-02-25 00:51:15,785 [sql-queue-1-ts latest-13-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [TS Latest] Queue polling was interrupted
+2026-02-25 00:51:15,785 [sql-queue-1-ts-10-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [TS] Queue polling was interrupted
+2026-02-25 00:51:15,786 [sql-queue-0-edge events-2-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [Edge Events] Queue polling was interrupted
+2026-02-25 00:51:15,785 [sql-queue-0-ts latest-12-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [TS Latest] Queue polling was interrupted
+2026-02-25 00:51:15,785 [sql-queue-0-ts-9-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [TS] Queue polling was interrupted
+2026-02-25 00:51:15,785 [sql-queue-2-ts-11-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [TS] Queue polling was interrupted
+2026-02-25 00:51:15,785 [sql-queue-0-attributes-6-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [Attributes] Queue polling was interrupted
+2026-02-25 00:51:15,785 [sql-queue-2-attributes-8-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [Attributes] Queue polling was interrupted
+2026-02-25 00:51:15,785 [sql-queue-1-attributes-7-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [Attributes] Queue polling was interrupted
+2026-02-25 00:51:15,785 [sql-queue-0-events-3-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [Events] Queue polling was interrupted
+2026-02-25 00:51:15,785 [sql-queue-1-events-4-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [Events] Queue polling was interrupted
+2026-02-25 00:51:15,786 [sql-queue-2-events-5-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [Events] Queue polling was interrupted
+2026-02-25 00:51:15,786 [sql-queue-2-ts latest-14-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [TS Latest] Queue polling completed
+2026-02-25 00:51:15,786 [sql-queue-1-ts latest-13-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [TS Latest] Queue polling completed
+2026-02-25 00:51:15,786 [sql-queue-1-ts-10-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [TS] Queue polling completed
+2026-02-25 00:51:15,786 [sql-queue-0-edge events-2-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [Edge Events] Queue polling completed
+2026-02-25 00:51:15,787 [sql-queue-0-ts latest-12-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [TS Latest] Queue polling completed
+2026-02-25 00:51:15,787 [sql-queue-0-ts-9-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [TS] Queue polling completed
+2026-02-25 00:51:15,787 [sql-queue-2-ts-11-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [TS] Queue polling completed
+2026-02-25 00:51:15,787 [sql-queue-0-attributes-6-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [Attributes] Queue polling completed
+2026-02-25 00:51:15,788 [sql-queue-2-attributes-8-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [Attributes] Queue polling completed
+2026-02-25 00:51:15,788 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-25 00:51:15,788 [sql-queue-1-attributes-7-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [Attributes] Queue polling completed
+2026-02-25 00:51:15,788 [sql-queue-0-events-3-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [Events] Queue polling completed
+2026-02-25 00:51:15,788 [sql-queue-1-events-4-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [Events] Queue polling completed
+2026-02-25 00:51:15,788 [sql-queue-2-events-5-thread-1] INFO  o.t.s.dao.sql.TbSqlBlockingQueue - [Events] Queue polling completed
+2026-02-25 00:51:15,793 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-25 00:51:15,795 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-25 00:51:15,806 [main] ERROR o.t.s.ThingsboardInstallApplication - Unexpected error during ThingsBoard installation!
+

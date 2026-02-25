@@ -7,7 +7,7 @@ export LOG_FILENAME=thingsboard.out
 
 if [ -z "$JAVA_OPTS" ]; then
     echo "Using default memory settings"
-    export JAVA_OPTS="-Xmx2048M -Xms2048M -Xss384k -XX:+AlwaysPreTouch"
+    export JAVA_OPTS="-Xmx1024M -Xms1024M -Xss384k -XX:+AlwaysPreTouch"
 fi
 
 if [[ "$JAVA_OPTS" != *"-agentlib:jdwp"* ]]; then
@@ -37,5 +37,4 @@ if [ ! -z "$TB_KAFKA_SERVERS" ]; then
 fi
 
 echo "JAVA_OPTS=$JAVA_OPTS"
-
-exec java $JAVA_OPTS -cp "$JAR_FILE" -Dloader.path="$LOADER_PATH" org.springframework.boot.loader.PropertiesLauncher
+exec java $JAVA_OPTS -cp "$JAR_FILE" -Dloader.path="$LOADER_PATH" org.springframework.boot.loader.launch.PropertiesLauncher

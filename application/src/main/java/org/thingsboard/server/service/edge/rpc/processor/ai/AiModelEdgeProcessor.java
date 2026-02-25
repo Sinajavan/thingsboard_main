@@ -46,22 +46,23 @@ import java.util.UUID;
 public class AiModelEdgeProcessor extends BaseAiModelProcessor implements AiModelProcessor {
 
     @Override
-    public ListenableFuture<Void> processAiModelMsgFromEdge(TenantId tenantId, Edge edge, AiModelUpdateMsg aiModelUpdateMsg) {
+    public ListenableFuture<Void> processAiModelMsgFromEdge(TenantId tenantId, Edge edge,
+            AiModelUpdateMsg aiModelUpdateMsg) {
         AiModelId aiModelId = new AiModelId(new UUID(aiModelUpdateMsg.getIdMSB(), aiModelUpdateMsg.getIdLSB()));
         try {
             edgeSynchronizationManager.getEdgeId().set(edge.getId());
 
-            return switch (aiModelUpdateMsg.getMsgType()) {
-                case ENTITY_CREATED_RPC_MESSAGE, ENTITY_UPDATED_RPC_MESSAGE -> {
+            switch (aiModelUpdateMsg.getMsgType()) {
+                case ENTITY_CREATED_RPC_MESSAGE:
+                case ENTITY_UPDATED_RPC_MESSAGE:
                     processAiModel(tenantId, aiModelId, aiModelUpdateMsg, edge);
-                    yield Futures.immediateFuture(null);
-                }
-                case ENTITY_DELETED_RPC_MESSAGE -> {
+                    return Futures.immediateFuture(null);
+                case ENTITY_DELETED_RPC_MESSAGE:
                     deleteAiModel(tenantId, edge, aiModelId);
-                    yield Futures.immediateFuture(null);
-                }
-                default -> handleUnsupportedMsgType(aiModelUpdateMsg.getMsgType());
-            };
+                    return Futures.immediateFuture(null);
+                default:
+                    return handleUnsupportedMsgType(aiModelUpdateMsg.getMsgType());
+            }
         } catch (DataValidationException e) {
             return Futures.immediateFailedFuture(e);
         } finally {
@@ -73,18 +74,22 @@ public class AiModelEdgeProcessor extends BaseAiModelProcessor implements AiMode
     public DownlinkMsg convertEdgeEventToDownlink(EdgeEvent edgeEvent, EdgeVersion edgeVersion) {
         AiModelId aiModelId = new AiModelId(edgeEvent.getEntityId());
         switch (edgeEvent.getAction()) {
-            case ADDED, UPDATED -> {
-                Optional<AiModel> aiModel = edgeCtx.getAiModelService().findAiModelById(edgeEvent.getTenantId(), aiModelId);
+            case ADDED:
+            case UPDATED: {
+                Optional<AiModel> aiModel = edgeCtx.getAiModelService().findAiModelById(edgeEvent.getTenantId(),
+                        aiModelId);
                 if (aiModel.isPresent()) {
                     UpdateMsgType msgType = getUpdateMsgType(edgeEvent.getAction());
-                    AiModelUpdateMsg aiModelUpdateMsg = EdgeMsgConstructorUtils.constructAiModelUpdatedMsg(msgType, aiModel.get());
+                    AiModelUpdateMsg aiModelUpdateMsg = EdgeMsgConstructorUtils.constructAiModelUpdatedMsg(msgType,
+                            aiModel.get());
                     return DownlinkMsg.newBuilder()
                             .setDownlinkMsgId(EdgeUtils.nextPositiveInt())
                             .addAiModelUpdateMsg(aiModelUpdateMsg)
                             .build();
                 }
+                break;
             }
-            case DELETED -> {
+            case DELETED: {
                 AiModelUpdateMsg aiModelUpdateMsg = EdgeMsgConstructorUtils.constructAiModelDeleteMsg(aiModelId);
                 return DownlinkMsg.newBuilder()
                         .setDownlinkMsgId(EdgeUtils.nextPositiveInt())
@@ -113,3 +118,4 @@ public class AiModelEdgeProcessor extends BaseAiModelProcessor implements AiMode
         return EdgeEventType.AI_MODEL;
     }
 }
+// Force Eclipse JDT recompilation

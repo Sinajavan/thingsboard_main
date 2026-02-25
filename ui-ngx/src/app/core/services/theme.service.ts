@@ -32,9 +32,10 @@ export class ThemeService {
     }
 
     private initTheme() {
-        const isDark = localStorage.getItem(this.storageKey) === 'true';
+        const isDark = localStorage.getItem(this.storageKey) !== 'false';
         if (isDark) {
             this.setDarkTheme();
+            localStorage.setItem(this.storageKey, 'true');
         } else {
             this.setDefaultTheme();
         }

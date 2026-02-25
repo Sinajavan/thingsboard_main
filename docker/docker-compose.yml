@@ -28,7 +28,7 @@ services:
     restart: always
     image: "${DOCKER_REPO}/${JS_EXECUTOR_DOCKER_NAME}:${TB_VERSION}"
     deploy:
-      replicas: 10
+      replicas: 1
     env_file:
       - tb-js-executor.env
   tb-core1:
