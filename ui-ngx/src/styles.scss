@@ -476,7 +476,9 @@ body.tb-dark {
         .mat-icon,
         .mat-mdc-button,
         .mat-mdc-icon-button,
-        .mat-mdc-stroked-button {
+        .mat-mdc-stroked-button,
+        .mat-mdc-outlined-button,
+        .mdc-button__label {
           color: white !important;
         }
       }

@@ -1,0 +1,6 @@
+FROM thingsboard/tb-node:4.4.0-SNAPSHOT
+USER root
+RUN apt-get update && apt-get install -y dos2unix
+RUN dos2unix /usr/bin/start-tb-node.sh
+RUN dos2unix /usr/share/thingsboard/bin/thingsboard.jar
+USER thingsboard

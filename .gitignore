@@ -44,3 +44,4 @@ HOW_TO_RUN.txt
 run_application.bat
 Run.txt
 server_log.txt
+docker/thingsboard.jar

@@ -1,0 +1,6 @@
+services:
+  tb-core1:
+    ports:
+      - "5005:5005"
+    environment:
+      JAVA_OPTS: "${JAVA_OPTS} -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
