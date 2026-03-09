@@ -1,333 +1,3 @@
-/**
- * Copyright © 2016-2026 The Thingsboard Authors
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-@use "@angular/material" as mat;
-@use "theme-overwrites" as overwrites;
-@use "@angular/material/core/tokens/m2-utils";
-@import "../theme/datepicker-theme";
-@import "./scss/constants";
-
-@include mat.all-component-typographies();
-@include mat.elevation-classes();
-@include mat.app-background();
-
-$tb-mat-indigo: (
-  50: #e8eaf6,
-  100: #c5cae9,
-  200: #9fa8da,
-  300: $tb-primary-color-light,
-  400: #5c6bc0,
-  500: $tb-primary-color,
-  600: $tb-secondary-color,
-  700: #303f9f,
-  800: #283593,
-  900: #1a237e,
-  A100: $tb-hue3-color,
-  A200: #536dfe,
-  A400: #3d5afe,
-  A700: #304ffe,
-  contrast: (
-    50: rgba(black, 0.87),
-    100: rgba(black, 0.87),
-    200: rgba(black, 0.87),
-    300: white,
-    400: white,
-    500: white,
-    600: white,
-    700: white,
-    800: white,
-    900: white,
-    A100: rgba(black, 0.87),
-    A200: white,
-    A400: white,
-    A700: white,
-  ),
-);
-
-$tb-primary: mat.m2-define-palette($tb-mat-indigo);
-$tb-accent: mat.m2-define-palette(mat.$m2-deep-orange-palette);
-
-$tb-mat-theme: mat.m2-define-light-theme(
-  (
-    color: (
-      primary: $tb-primary,
-      accent: $tb-accent,
-    ),
-    typography: mat.m2-define-typography-config(
-        $button: mat.m2-define-typography-level(
-            14px,
-            36px,
-            500,
-            $letter-spacing: 0.03125em
-          ),
-      ),
-    density: 0,
-  )
-);
-
-$tb-theme-system: m2-utils.get-system($tb-mat-theme);
-$tb-theme-system: map_merge(
-  $tb-theme-system,
-  (
-    background: map_get(mat.$m2-grey-palette, 200),
-  )
-);
-$tb-theme: map_merge(
-  $tb-mat-theme,
-  (
-    _mat-system: $tb-theme-system,
-  )
-);
-
-$primary: mat.m2-get-color-from-palette($tb-primary);
-$accent: mat.m2-get-color-from-palette($tb-accent);
-
-$tb-dark-mat-indigo: (
-  50: #e8eaf6,
-  100: #c5cae9,
-  200: #9fa8da,
-  300: #7986cb,
-  400: #5c6bc0,
-  500: $tb-dark-primary-color,
-  600: $tb-secondary-color,
-  700: #303f9f,
-  800: $tb-primary-color,
-  900: #1a237e,
-  A100: $tb-hue3-color,
-  A200: #536dfe,
-  A400: #3d5afe,
-  A700: #304ffe,
-  contrast: (
-    50: rgba(black, 0.87),
-    100: rgba(black, 0.87),
-    200: rgba(black, 0.87),
-    300: rgba(black, 0.87),
-    400: rgba(black, 0.87),
-    500: map_get($tb-mat-indigo, 900),
-    600: white,
-    700: white,
-    800: white,
-    900: white,
-    A100: rgba(black, 0.87),
-    A200: rgba(black, 0.87),
-    A400: rgba(black, 0.87),
-    A700: rgba(black, 0.87),
-  ),
-);
-
-$tb-dark-primary: mat.m2-define-palette($tb-dark-mat-indigo);
-
-$tb-dark-foreground: (
-  base: white,
-  divider: rgba(white, 0.12),
-  dividers: rgba(white, 0.12),
-  disabled: rgba(white, 0.5),
-  disabled-button: rgba(white, 0.5),
-  disabled-text: rgba(white, 0.5),
-  elevation: black,
-  hint-text: rgba(white, 0.5),
-  secondary-text: rgba(white, 0.7),
-  icon: white,
-  icons: white,
-  text: white,
-  slider-min: white,
-  slider-off: rgba(white, 0.3),
-  slider-off-active: rgba(white, 0.3),
-);
-
-$tb-dark-background: (
-  status-bar: black,
-  app-bar: black,
-  background: black,
-  hover: rgba(white, 0.04),
-  card: black,
-  dialog: black,
-  disabled-button: rgba(white, 0.12),
-  raised-button: map_get($tb-dark-mat-indigo, 800),
-  focused-button: rgba(white, 0.06),
-  selected-button: map_get($tb-dark-mat-indigo, 900),
-  selected-disabled-button: map_get($tb-dark-mat-indigo, 800),
-  disabled-button-toggle: black,
-  unselected-chip: map_get($tb-dark-mat-indigo, 700),
-  disabled-list-option: black,
-  tooltip: map_get($tb-dark-mat-indigo, 700),
-);
-
-$tb-dark-theme: mat.m2-define-dark-theme(
-  (
-    color: (
-      primary: $tb-dark-primary,
-      accent: $tb-accent,
-    ),
-    typography: mat.m2-define-typography-config(),
-    density: 0,
-  )
-);
-
-$tb-dark-theme-color: map_get($tb-dark-theme, color);
-$tb-dark-theme-color: map_merge(
-  $tb-dark-theme-color,
-  (
-    foreground: $tb-dark-foreground,
-    background: $tb-dark-background,
-  )
-);
-$tb-dark-theme: map_merge(
-  $tb-dark-theme,
-  (
-    color: $tb-dark-theme-color,
-  )
-);
-
-$tb-dark-theme-system: m2-utils.get-system($tb-dark-theme);
-$tb-dark-theme-system: map_merge(
-  $tb-dark-theme-system,
-  (
-    surface: map_get($tb-dark-background, card),
-    background: map_get($tb-dark-background, background),
-    app-bar: map_get($tb-dark-background, app-bar),
-  )
-);
-$tb-dark-theme: map_merge(
-  $tb-dark-theme,
-  (
-    _mat-system: $tb-dark-theme-system,
-  )
-);
-
-@mixin mat-fab-toolbar-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $warn: map-get($theme, warn);
-  $background: map-get($theme, background);
-  $foreground: map-get($theme, foreground);
-
-  mat-fab-toolbar {
-    .mat-fab-toolbar-background {
-      background: mat.m2-get-color-from-palette($background, app-bar);
-      color: mat.m2-get-color-from-palette($foreground, text);
-    }
-
-    &.mat-primary {
-      .mat-fab-toolbar-background {
-        background: mat.m2-get-color-from-palette($primary);
-        color: mat.m2-get-color-from-palette($primary, default-contrast);
-      }
-    }
-
-    &.mat-accent {
-      .mat-fab-toolbar-background {
-        background: mat.m2-get-color-from-palette($accent);
-        color: mat.m2-get-color-from-palette($accent, default-contrast);
-      }
-    }
-
-    &.mat-warn {
-      .mat-fab-toolbar-background {
-        background: mat.m2-get-color-from-palette($warn);
-        color: mat.m2-get-color-from-palette($warn, default-contrast);
-      }
-    }
-  }
-}
-
-@mixin _mat-toolbar-inverse-color($palette) {
-  background: mat.m2-get-color-from-palette($palette, default-contrast);
-  color: rgba(black, 0.87);
-}
-
-@mixin mat-fab-toolbar-inverse-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $warn: map-get($theme, warn);
-  $background: map-get($theme, foreground);
-  $foreground: map-get($theme, background);
-
-  mat-fab-toolbar {
-    .mat-fab-toolbar-background {
-      background: mat.m2-get-color-from-palette($background, app-bar);
-      color: mat.m2-get-color-from-palette($foreground, text);
-    }
-
-    &.mat-primary {
-      .mat-fab-toolbar-background {
-        @include _mat-toolbar-inverse-color($primary);
-      }
-    }
-
-    mat-toolbar {
-      &.mat-primary {
-        @include _mat-toolbar-inverse-color($primary);
-
-        button.mat-mdc-icon-button {
-          .mat-icon {
-            color: mat.m2-get-color-from-palette($primary);
-          }
-        }
-      }
-    }
-
-    .mat-mdc-fab {
-      &.mat-primary {
-        background: mat.m2-get-color-from-palette($primary, default-contrast);
-        color: mat.m2-get-color-from-palette($primary);
-      }
-    }
-  }
-}
-
-@mixin tb-components-theme($theme) {
-  $primary: map-get($theme, primary);
-  $warn: map-get($theme, warn);
-
-  mat-toolbar {
-    &.mat-hue-3 {
-      background-color: mat.m2-get-color-from-palette($primary, "A100");
-    }
-  }
-
-  @include mat-fab-toolbar-theme($tb-theme);
-
-  div.tb-dashboard-page.mobile-app {
-    @include mat-fab-toolbar-inverse-theme($tb-theme);
-  }
-
-  ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: rgba(203, 203, 203, 0.8);
-
-    &:hover {
-      background: rgba(165, 165, 165, 0.65);
-    }
-  }
-}
-
-.tb-default {
-  @include mat.all-component-themes($tb-theme);
-  @include mat-datetimepicker-theme($tb-theme);
-  @include tb-components-theme($tb-theme);
-  @include overwrites.theme-overwrites($tb-primary, $tb-theme);
-  @include mat.typography-hierarchy($tb-theme);
 }
 
 .tb-dark {
@@ -341,18 +11,24 @@ $tb-dark-theme: map_merge(
   .tb-legend-config-panel,
   .tb-filter-panel,
   .tb-panel-container {
+    background: black !important;
     background-color: black !important;
     border-color: rgba(255, 255, 255, 0.12) !important;
     color: white !important;
   }
 
+
+
   // Overrides for cards (allowing inline styles/classes to win)
   mat-card,
   .mat-mdc-card {
+    background: black;
     background-color: black;
     border-color: rgba(255, 255, 255, 0.12);
     color: white;
   }
+
+
 
   // Markdown Widget "Item Cards" (Rectangles) Overrides
   // These are defined in widget JSONs, so we must override them here for dark mode.
@@ -500,6 +176,8 @@ $tb-dark-theme: map_merge(
     // some elements like dashboard-title have inline [style.color] that need strong overriding
     color: white !important;
 
+
+
     .tb-title,
     span,
     div,
@@ -529,8 +207,12 @@ $tb-dark-theme: map_merge(
     }
   }
 
+
+
+
   // Time Series Chart Panel Override
   .tb-time-series-chart-panel {
+    background: transparent !important;
     background-color: transparent !important;
   }
 
@@ -552,6 +234,7 @@ $tb-dark-theme: map_merge(
   mat-paginator,
   .mat-mdc-paginator,
   .mat-mdc-paginator-container {
+    background: black !important;
     background-color: black !important;
     color: white !important;
   }
@@ -623,9 +306,8 @@ $tb-dark-theme: map_merge(
   }
 
   // Inline Form Field Borders
-  .mdc-text-field--outlined:not(.mdc-text-field--focused):not(
-      .mdc-text-field--disabled
-    ):not(.mdc-text-field--invalid):not(:hover) {
+  .mdc-text-field--outlined:not(.mdc-text-field--focused):not(.mdc-text-field--disabled):not(.mdc-text-field--invalid):not(:hover) {
+
     .mdc-notched-outline__leading,
     .mdc-notched-outline__trailing,
     .mdc-notched-outline__notch {
@@ -653,19 +335,14 @@ $tb-dark-theme: map_merge(
       }
     }
 
-    .tb-editor-area-title-panel {
-      label,
-      button.mat-mdc-button-base {
-        background-color: rgba(255, 255, 255, 0.12) !important;
-      }
+    .tb-editor-area-title-panel label {
+      color: #00acc1;
+      background: rgba(255, 255, 255, 0.12) !important;
+    }
 
-      label {
-        color: #00acc1;
-      }
-
-      button.mat-mdc-button-base {
-        color: rgba(255, 255, 255, 0.7) !important;
-      }
+    .tb-editor-area-title-panel button.mat-mdc-button-base {
+      background: rgba(255, 255, 255, 0.12) !important;
+      color: rgba(255, 255, 255, 0.7) !important;
     }
   }
 
@@ -693,9 +370,12 @@ $tb-dark-theme: map_merge(
     filter: invert(1) hue-rotate(180deg) !important;
   }
 
+
+
   // Invert hardcoded black SVGs in custom HTML widgets
   img[src*="data:image/svg+xml"] {
-    &[src*='fill="black"'],
+
+    &[src*="fill=\"black\""],
     &[src*="fill='black'"],
     &[src*="%22black%22"],
     &[src*="%27black%27"] {
