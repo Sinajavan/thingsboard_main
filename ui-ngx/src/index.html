@@ -29,12 +29,22 @@
   <link rel="preload" href="assets/fonts/MaterialIconsRound-Regular.otf" as="font" type="font/otf"
     crossorigin="anonymous" />
   <link rel="stylesheet" href="assets/fonts/material-icons.css" />
+  <script>
+    if (localStorage.getItem('tb-dark-mode') !== 'false') {
+      document.documentElement.classList.add('tb-dark-loading');
+    }
+  </script>
   <style type="text/css">
     body,
     html {
       height: 100%;
       overflow: hidden;
       background-color: #eee;
+    }
+
+    html.tb-dark-loading,
+    html.tb-dark-loading body {
+      background-color: #1a1a1a;
     }
 
     .tb-loading-spinner {
