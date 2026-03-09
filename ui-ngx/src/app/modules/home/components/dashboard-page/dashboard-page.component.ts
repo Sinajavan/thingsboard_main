@@ -161,12 +161,12 @@ import { HttpStatusCode } from '@angular/common/http';
 
 // @dynamic
 @Component({
-    selector: 'tb-dashboard-page',
-    templateUrl: './dashboard-page.component.html',
-    styleUrls: ['./dashboard-page.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'tb-dashboard-page',
+  templateUrl: './dashboard-page.component.html',
+  styleUrls: ['./dashboard-page.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false
 })
 export class DashboardPageComponent extends PageComponent implements IDashboardController, HasDirtyFlag, OnInit, AfterViewInit, OnDestroy {
 
@@ -226,7 +226,7 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
 
   @ViewChild('dashboardContainer') dashboardContainer: ElementRef<HTMLElement>;
 
-  @ViewChild('dashboardContent', {read: ElementRef}) dashboardContent: ElementRef<HTMLElement>;
+  @ViewChild('dashboardContent', { read: ElementRef }) dashboardContent: ElementRef<HTMLElement>;
 
   prevDashboard: Dashboard;
 
@@ -270,9 +270,9 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
 
   addingLayoutCtx: DashboardPageLayoutContext;
 
-  mainLayoutSize: {width: string; height: string; maxWidth: string; minWidth: string} =
-    {width: '100%', height: '100%', maxWidth: '100%', minWidth: '100%'};
-  rightLayoutSize: {width: string; height: string} = {width: '100%', height: '100%'};
+  mainLayoutSize: { width: string; height: string; maxWidth: string; minWidth: string } =
+    { width: '100%', height: '100%', maxWidth: '100%', minWidth: '100%' };
+  rightLayoutSize: { width: string; height: string } = { width: '100%', height: '100%' };
 
   dashboardLogoLink = this.getDashboardLogoLink();
 
@@ -361,31 +361,31 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
   private changeMobileSize = new Subject<boolean>();
 
   constructor(protected store: Store<AppState>,
-              @Inject(WINDOW) private window: Window,
-              @Inject(DOCUMENT) private document: Document,
-              private breakpointObserver: BreakpointObserver,
-              private route: ActivatedRoute,
-              private router: Router,
-              private utils: UtilsService,
-              private dashboardUtils: DashboardUtilsService,
-              private entityService: EntityService,
-              private dialogService: DialogService,
-              private widgetComponentService: WidgetComponentService,
-              private dashboardService: DashboardService,
-              private itembuffer: ItemBufferService,
-              private importExport: ImportExportService,
-              private mobileService: MobileService,
-              private dialog: MatDialog,
-              public translate: TranslateService,
-              private popoverService: TbPopoverService,
-              private renderer: Renderer2,
-              private ngZone: NgZone,
-              @Optional() @Inject('embeddedValue') private embeddedValue,
-              private overlay: Overlay,
-              private viewContainerRef: ViewContainerRef,
-              private cd: ChangeDetectorRef,
-              public elRef: ElementRef,
-              private injector: Injector) {
+    @Inject(WINDOW) private window: Window,
+    @Inject(DOCUMENT) private document: Document,
+    private breakpointObserver: BreakpointObserver,
+    private route: ActivatedRoute,
+    private router: Router,
+    private utils: UtilsService,
+    private dashboardUtils: DashboardUtilsService,
+    private entityService: EntityService,
+    private dialogService: DialogService,
+    private widgetComponentService: WidgetComponentService,
+    private dashboardService: DashboardService,
+    private itembuffer: ItemBufferService,
+    private importExport: ImportExportService,
+    private mobileService: MobileService,
+    private dialog: MatDialog,
+    public translate: TranslateService,
+    private popoverService: TbPopoverService,
+    private renderer: Renderer2,
+    private ngZone: NgZone,
+    @Optional() @Inject('embeddedValue') private embeddedValue,
+    private overlay: Overlay,
+    private viewContainerRef: ViewContainerRef,
+    private cd: ChangeDetectorRef,
+    public elRef: ElementRef,
+    private injector: Injector) {
     super(store);
     if (isDefinedAndNotNull(this.embeddedValue)) {
       this.embedded = this.embeddedValue;
@@ -458,9 +458,9 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
         }),
         skip(1)
       ).subscribe(() => {
-          this.dashboardUtils.updatedLayoutForBreakpoint(this.layouts.main, this.dashboardCtx.breakpoint);
-          this.updateLayoutSizes();
-        }
+        this.dashboardUtils.updatedLayoutForBreakpoint(this.layouts.main, this.dashboardCtx.breakpoint);
+        this.updateLayoutSizes();
+      }
       )
     );
 
@@ -522,8 +522,8 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
     this.singlePageMode = data.singlePageMode;
 
     this.readonly = this.embedded || (this.singlePageMode && !this.widgetEditMode && !this.route.snapshot.queryParamMap.get('edit'))
-                    || this.forceFullscreen || this.isMobileApp || this.authUser.authority === Authority.CUSTOMER_USER ||
-                    this.route.snapshot.queryParamMap.get('readonly') === 'true';
+      || this.forceFullscreen || this.isMobileApp || this.authUser.authority === Authority.CUSTOMER_USER ||
+      this.route.snapshot.queryParamMap.get('readonly') === 'true';
 
     this.dashboardCtx.aliasController = this.parentAliasController ? this.parentAliasController : new AliasController(this.utils,
       this.entityService,
@@ -549,7 +549,7 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
     if (isNotEmptyStr(cssString)) {
       const cssParser = new cssjs();
       cssParser.testMode = false;
-      this.dashboardPageClass  = 'tb-dashboard-page-css-' + guid();
+      this.dashboardPageClass = 'tb-dashboard-page-css-' + guid();
       this.dashboardCtx.dashboardCssClass = this.dashboardPageClass;
       cssParser.cssPreviewNamespace = 'tb-default .' + this.dashboardPageClass;
       cssParser.createStyleElement(this.dashboardPageClass, cssString);
@@ -891,19 +891,19 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
     }
     this.dialog.open<EntityAliasesDialogComponent, EntityAliasesDialogData,
       EntityAliases>(EntityAliasesDialogComponent, {
-      disableClose: true,
-      panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
-      data: {
-        entityAliases: deepClone(this.dashboard.configuration.entityAliases),
-        widgets: this.dashboardUtils.getWidgetsArray(this.dashboard),
-        isSingleEntityAlias: false
-      }
-    }).afterClosed().subscribe((entityAliases) => {
-      if (entityAliases) {
-        this.dashboard.configuration.entityAliases = entityAliases;
-        this.entityAliasesUpdated();
-      }
-    });
+        disableClose: true,
+        panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
+        data: {
+          entityAliases: deepClone(this.dashboard.configuration.entityAliases),
+          widgets: this.dashboardUtils.getWidgetsArray(this.dashboard),
+          isSingleEntityAlias: false
+        }
+      }).afterClosed().subscribe((entityAliases) => {
+        if (entityAliases) {
+          this.dashboard.configuration.entityAliases = entityAliases;
+          this.entityAliasesUpdated();
+        }
+      });
   }
 
   public openFilters($event: Event) {
@@ -912,19 +912,19 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
     }
     this.dialog.open<FiltersDialogComponent, FiltersDialogData,
       Filters>(FiltersDialogComponent, {
-      disableClose: true,
-      panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
-      data: {
-        filters: deepClone(this.dashboard.configuration.filters),
-        widgets: this.dashboardUtils.getWidgetsArray(this.dashboard),
-        isSingleFilter: false
-      }
-    }).afterClosed().subscribe((filters) => {
-      if (filters) {
-        this.dashboard.configuration.filters = filters;
-        this.filtersUpdated();
-      }
-    });
+        disableClose: true,
+        panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
+        data: {
+          filters: deepClone(this.dashboard.configuration.filters),
+          widgets: this.dashboardUtils.getWidgetsArray(this.dashboard),
+          isSingleFilter: false
+        }
+      }).afterClosed().subscribe((filters) => {
+        if (filters) {
+          this.dashboard.configuration.filters = filters;
+          this.filtersUpdated();
+        }
+      });
   }
 
   public openDashboardSettings($event: Event) {
@@ -941,28 +941,28 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
     }
     this.dialog.open<DashboardSettingsDialogComponent, DashboardSettingsDialogData,
       DashboardSettingsDialogData>(DashboardSettingsDialogComponent, {
-      disableClose: true,
-      panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
-      data: {
-        settings: deepClone(this.dashboard.configuration.settings),
-        gridSettings,
-        breakpointId: this.layouts.main.layoutCtx.breakpoint
-      }
-    }).afterClosed().subscribe((data) => {
-      if (data) {
-        this.dashboard.configuration.settings = data.settings;
-        this.dashboardLogoCache = undefined;
-        this.updateDashboardCss();
-        const newGridSettings = data.gridSettings;
-        if (newGridSettings) {
-          const layouts = deepClone(this.dashboard.configuration.states[layoutKeys.state].layouts);
-          const layoutConfig = this.dashboardUtils.getDashboardLayoutConfig(
-            layouts[layoutKeys.layout], this.layouts[layoutKeys.layout].layoutCtx.breakpoint);
-          this.dashboardUtils.updateLayoutSettings(layoutConfig, newGridSettings);
-          this.updateDashboardLayouts(layouts);
-       }
-      }
-    });
+        disableClose: true,
+        panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
+        data: {
+          settings: deepClone(this.dashboard.configuration.settings),
+          gridSettings,
+          breakpointId: this.layouts.main.layoutCtx.breakpoint
+        }
+      }).afterClosed().subscribe((data) => {
+        if (data) {
+          this.dashboard.configuration.settings = data.settings;
+          this.dashboardLogoCache = undefined;
+          this.updateDashboardCss();
+          const newGridSettings = data.gridSettings;
+          if (newGridSettings) {
+            const layouts = deepClone(this.dashboard.configuration.states[layoutKeys.state].layouts);
+            const layoutConfig = this.dashboardUtils.getDashboardLayoutConfig(
+              layouts[layoutKeys.layout], this.layouts[layoutKeys.layout].layoutCtx.breakpoint);
+            this.dashboardUtils.updateLayoutSettings(layoutConfig, newGridSettings);
+            this.updateDashboardLayouts(layouts);
+          }
+        }
+      });
   }
 
   public manageDashboardStates($event: Event) {
@@ -971,22 +971,22 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
     }
     this.dialog.open<ManageDashboardStatesDialogComponent, ManageDashboardStatesDialogData,
       ManageDashboardStatesDialogResult>(ManageDashboardStatesDialogComponent, {
-      disableClose: true,
-      panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
-      data: {
-        states: deepClone(this.dashboard.configuration.states),
-        widgets: this.dashboard.configuration.widgets as {[id: string]: Widget}
-      }
-    }).afterClosed().subscribe((result) => {
-      if (result) {
-        if (result.addWidgets) {
-          Object.assign(this.dashboard.configuration.widgets, result.addWidgets);
+        disableClose: true,
+        panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
+        data: {
+          states: deepClone(this.dashboard.configuration.states),
+          widgets: this.dashboard.configuration.widgets as { [id: string]: Widget }
         }
-        if (result.states) {
-          this.updateStates(result.states);
+      }).afterClosed().subscribe((result) => {
+        if (result) {
+          if (result.addWidgets) {
+            Object.assign(this.dashboard.configuration.widgets, result.addWidgets);
+          }
+          if (result.states) {
+            this.updateStates(result.states);
+          }
         }
-      }
-    });
+      });
   }
 
   public manageDashboardLayouts($event: Event) {
@@ -995,16 +995,16 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
     }
     this.dialog.open<ManageDashboardLayoutsDialogComponent, ManageDashboardLayoutsDialogData,
       DashboardStateLayouts>(ManageDashboardLayoutsDialogComponent, {
-      disableClose: true,
-      panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
-      data: {
-        layouts: deepClone(this.dashboard.configuration.states[this.dashboardCtx.state].layouts)
-      }
-    }).afterClosed().subscribe((layouts) => {
-      if (layouts) {
-        this.updateDashboardLayouts(layouts);
-      }
-    });
+        disableClose: true,
+        panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
+        data: {
+          layouts: deepClone(this.dashboard.configuration.states[this.dashboardCtx.state].layouts)
+        }
+      }).afterClosed().subscribe((layouts) => {
+        if (layouts) {
+          this.updateDashboardLayouts(layouts);
+        }
+      });
   }
 
   private moveWidgets($event: Event, layoutId: DashboardLayoutId, breakpointId: BreakpointId) {
@@ -1015,19 +1015,19 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
     this.cd.markForCheck();
     this.dialog.open<MoveWidgetsDialogComponent, any,
       MoveWidgetsDialogResult>(MoveWidgetsDialogComponent, {
-      disableClose: true,
-      panelClass: ['tb-dialog', 'tb-fullscreen-dialog']
-    }).afterClosed().subscribe((result) => {
-      this.layouts[layoutId].layoutCtx.displayGrid = 'onDrag&Resize';
-      if (result) {
-        const dashboardLayout = this.dashboardConfiguration.states[this.dashboardCtx.state].layouts[layoutId];
-        const targetLayout = this.dashboardUtils.getDashboardLayoutConfig(dashboardLayout, breakpointId);
-        this.dashboardUtils.moveWidgets(targetLayout, result.cols, result.rows);
-        this.updateLayouts();
-      } else {
-        this.cd.markForCheck();
-      }
-    });
+        disableClose: true,
+        panelClass: ['tb-dialog', 'tb-fullscreen-dialog']
+      }).afterClosed().subscribe((result) => {
+        this.layouts[layoutId].layoutCtx.displayGrid = 'onDrag&Resize';
+        if (result) {
+          const dashboardLayout = this.dashboardConfiguration.states[this.dashboardCtx.state].layouts[layoutId];
+          const targetLayout = this.dashboardUtils.getDashboardLayoutConfig(dashboardLayout, breakpointId);
+          this.dashboardUtils.moveWidgets(targetLayout, result.cols, result.rows);
+          this.updateLayouts();
+        } else {
+          this.cd.markForCheck();
+        }
+      });
   }
 
   private updateDashboardLayouts(newLayouts: DashboardStateLayouts) {
@@ -1035,7 +1035,7 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
     this.updateLayouts();
   }
 
-  private updateStates(states: {[id: string]: DashboardState }) {
+  private updateStates(states: { [id: string]: DashboardState }) {
     this.dashboard.configuration.states = states;
     this.dashboardUtils.removeUnusedWidgets(this.dashboard);
     let targetState = this.dashboardCtx.state;
@@ -1052,43 +1052,43 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
     this.importExport.importWidget(this.dashboard, this.dashboardCtx.state,
       this.editMissingAliases.bind(this),
       this.selectTargetLayout.bind(this), this.entityAliasesUpdated.bind(this), this.filtersUpdated.bind(this)).subscribe(
-      (importData) => {
-        if (importData) {
-          if (this.isAddingWidget) {
-            this.onAddWidgetClosed();
-            this.isAddingWidgetClosed = true;
+        (importData) => {
+          if (importData) {
+            if (this.isAddingWidget) {
+              this.onAddWidgetClosed();
+              this.isAddingWidgetClosed = true;
+            }
+            const widget = importData.widget;
+            const layoutId = importData.layoutId;
+            this.layouts[layoutId].layoutCtx.widgets.addWidgetId(widget.id);
+            this.runChangeDetection();
           }
-          const widget = importData.widget;
-          const layoutId = importData.layoutId;
-          this.layouts[layoutId].layoutCtx.widgets.addWidgetId(widget.id);
-          this.runChangeDetection();
         }
-      }
-    );
+      );
   }
 
   private editMissingAliases(widgets: Array<Widget>, isSingleWidget: boolean,
-                             customTitle: string, missingEntityAliases: EntityAliases): Observable<EntityAliases> {
+    customTitle: string, missingEntityAliases: EntityAliases): Observable<EntityAliases> {
     return this.dialog.open<EntityAliasesDialogComponent, EntityAliasesDialogData,
       EntityAliases>(EntityAliasesDialogComponent, {
-      disableClose: true,
-      panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
-      data: {
-        entityAliases: missingEntityAliases,
-        widgets,
-        customTitle,
-        isSingleWidget,
-        disableAdd: true
-      }
-    }).afterClosed().pipe(
-      map((updatedEntityAliases) => {
+        disableClose: true,
+        panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
+        data: {
+          entityAliases: missingEntityAliases,
+          widgets,
+          customTitle,
+          isSingleWidget,
+          disableAdd: true
+        }
+      }).afterClosed().pipe(
+        map((updatedEntityAliases) => {
           if (updatedEntityAliases) {
             return updatedEntityAliases;
           } else {
             throw new Error('Unable to resolve missing entity aliases!');
           }
         }
-      ));
+        ));
   }
 
   public currentDashboardIdChanged(dashboardId: string) {
@@ -1144,7 +1144,7 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
         this.updateLayout(layout, layoutInfo);
       } else {
         layout.show = false;
-        this.updateLayout(layout, {default: {widgetIds: [], widgetLayouts: {}, gridSettings: null}});
+        this.updateLayout(layout, { default: { widgetIds: [], widgetLayouts: {}, gridSettings: null } });
       }
     }
   }
@@ -1323,9 +1323,9 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
     if (layoutIds.length > 1) {
       return this.dialog.open<SelectTargetLayoutDialogComponent, any,
         DashboardLayoutId>(SelectTargetLayoutDialogComponent, {
-        disableClose: true,
-        panelClass: ['tb-dialog', 'tb-fullscreen-dialog']
-      }).afterClosed();
+          disableClose: true,
+          panelClass: ['tb-dialog', 'tb-fullscreen-dialog']
+        }).afterClosed();
     } else {
       return of(layoutIds[0] as DashboardLayoutId);
     }
@@ -1382,24 +1382,24 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
         } else {
           this.dialog.open<AddWidgetDialogComponent, AddWidgetDialogData,
             Widget>(AddWidgetDialogComponent, {
-            disableClose: true,
-            panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
-            maxWidth: '95vw',
-            injector: this.injector,
-            data: {
-              dashboard: this.dashboard,
-              aliasController: this.dashboardCtx.aliasController,
-              stateController: this.dashboardCtx.stateController,
-              widget: newWidget,
-              widgetInfo: widgetTypeInfo,
-              showLayoutConfig,
-              isDefaultBreakpoint
-            }
-          }).afterClosed().subscribe((addedWidget) => {
-            if (addedWidget) {
-              this.addWidgetToDashboard(addedWidget);
-            }
-          });
+              disableClose: true,
+              panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
+              maxWidth: '95vw',
+              injector: this.injector,
+              data: {
+                dashboard: this.dashboard,
+                aliasController: this.dashboardCtx.aliasController,
+                stateController: this.dashboardCtx.stateController,
+                widget: newWidget,
+                widgetInfo: widgetTypeInfo,
+                showLayoutConfig,
+                isDefaultBreakpoint
+              }
+            }).afterClosed().subscribe((addedWidget) => {
+              if (addedWidget) {
+                this.addWidgetToDashboard(addedWidget);
+              }
+            });
         }
       },
       error: (errorData) => {
@@ -1509,20 +1509,20 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
 
   pasteWidget($event: Event, layoutCtx: DashboardPageLayoutContext, pos: WidgetPosition) {
     this.itembuffer.pasteWidget(this.dashboard, this.dashboardCtx.state, layoutCtx.id, layoutCtx.breakpoint,
-            pos, this.entityAliasesUpdated.bind(this), this.filtersUpdated.bind(this)).subscribe(
-      (widget) => {
-        layoutCtx.widgets.addWidgetId(widget.id);
-        this.runChangeDetection();
-      });
+      pos, this.entityAliasesUpdated.bind(this), this.filtersUpdated.bind(this)).subscribe(
+        (widget) => {
+          layoutCtx.widgets.addWidgetId(widget.id);
+          this.runChangeDetection();
+        });
   }
 
   pasteWidgetReference($event: Event, layoutCtx: DashboardPageLayoutContext, pos: WidgetPosition) {
     this.itembuffer.pasteWidgetReference(this.dashboard, this.dashboardCtx.state, layoutCtx.id, layoutCtx.breakpoint,
       pos).subscribe(
-      (widget) => {
-        layoutCtx.widgets.addWidgetId(widget.id);
-        this.runChangeDetection();
-      });
+        (widget) => {
+          layoutCtx.widgets.addWidgetId(widget.id);
+          this.runChangeDetection();
+        });
   }
 
   removeWidget($event: Event, layoutCtx: DashboardPageLayoutContext, widget: Widget) {
@@ -1530,7 +1530,7 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
     if (!title || title.length === 0) {
       title = this.widgetComponentService.getInstantWidgetInfo(widget).widgetName;
     }
-    const confirmTitle = this.translate.instant('widget.remove-widget-title', {widgetTitle: title});
+    const confirmTitle = this.translate.instant('widget.remove-widget-title', { widgetTitle: title });
     const confirmContent = this.translate.instant('widget.remove-widget-text');
     this.dialogService.confirm(confirmTitle,
       confirmContent,
@@ -1719,7 +1719,7 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
 
     const filterWidgetTypes = this.dashboardWidgetSelectComponent.filterWidgetTypes;
     const widgetTypesList = Array.from(this.dashboardWidgetSelectComponent.widgetTypes.values()).map(type =>
-      ({type, display: filterWidgetTypes === null ? true : filterWidgetTypes.includes(type)}));
+      ({ type, display: filterWidgetTypes === null ? true : filterWidgetTypes.includes(type) }));
 
     const providers: StaticProvider[] = [
       {
@@ -1737,7 +1737,7 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
         useValue: overlayRef
       }
     ];
-    const injector = Injector.create({parent: this.viewContainerRef.injector, providers});
+    const injector = Injector.create({ parent: this.viewContainerRef.injector, providers });
     overlayRef.attach(new ComponentPortal(DisplayWidgetTypesPanelComponent, this.viewContainerRef, injector));
     this.cd.markForCheck();
   }
@@ -1748,18 +1748,18 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
     }
     this.dialog.open<DashboardImageDialogComponent, DashboardImageDialogData,
       DashboardImageDialogResult>(DashboardImageDialogComponent, {
-      disableClose: true,
-      panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
-      data: {
-        dashboardId: this.dashboard.id,
-        currentImage: this.dashboard.image,
-        dashboardElement: this.dashboardContainer.nativeElement
-      }
-    }).afterClosed().subscribe((result) => {
-      if (result) {
-        this.dashboard.image = result.image;
-      }
-    });
+        disableClose: true,
+        panelClass: ['tb-dialog', 'tb-fullscreen-dialog'],
+        data: {
+          dashboardId: this.dashboard.id,
+          currentImage: this.dashboard.image,
+          dashboardElement: this.dashboardContainer.nativeElement
+        }
+      }).afterClosed().subscribe((result) => {
+        if (result) {
+          this.dashboard.image = result.image;
+        }
+      });
   }
 
   toggleVersionControl($event: Event, versionControlButton: MatButton | MatIconButton) {
@@ -1780,11 +1780,11 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
           entityId: this.dashboard.id,
           entityName: this.dashboard.name,
           onBeforeCreateVersion: () => this.dashboardService.saveDashboard(this.dashboard).pipe(
-              tap((dashboard) => {
-                this.dashboard = this.dashboardUtils.validateAndUpdateDashboard(dashboard);
-                this.prevDashboard = deepClone(this.dashboard);
-              })
-            )
+            tap((dashboard) => {
+              this.dashboard = this.dashboardUtils.validateAndUpdateDashboard(dashboard);
+              this.prevDashboard = deepClone(this.dashboard);
+            })
+          )
         }, {}, {}, {}, true);
       versionControlPopover.tbComponentRef.instance.popoverComponent = versionControlPopover;
       versionControlPopover.tbComponentRef.instance.versionRestored.subscribe(() => {
@@ -1812,14 +1812,14 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
   get showMainLayoutFiller(): boolean {
     const layoutMaxWidth = this.dashboardUtils.getBreakpointInfoById(this.layouts.main.layoutCtx.breakpoint)?.maxWidth || Infinity;
     const dashboardMaxWidth = this.dashboardUtils.getBreakpointInfoById(this.dashboardCtx.breakpoint)?.maxWidth || Infinity;
-    return !this.layouts.right.show && layoutMaxWidth < dashboardMaxWidth  && !this.isEditingWidget;
+    return !this.layouts.right.show && layoutMaxWidth < dashboardMaxWidth && !this.isEditingWidget;
   }
 
   get currentBreakpointValue(): string {
     return this.dashboardUtils.getBreakpointSizeDescription(this.layouts.main.layoutCtx.breakpoint);
   }
 
-  private parseBreakpointsResponse(breakpoints: {[key: string]: boolean}): BreakpointInfo {
+  private parseBreakpointsResponse(breakpoints: { [key: string]: boolean }): BreakpointInfo {
     const activeBreakpoints: BreakpointInfo[] = [];
     Object.keys(breakpoints).map((key) => {
       if (breakpoints[key]) {
@@ -1837,6 +1837,6 @@ export class DashboardPageComponent extends PageComponent implements IDashboardC
   }
 
   private getDashboardLogoLink(): UrlTree {
-    return this.forceFullscreen ? null : this.router.createUrlTree([], {relativeTo: this.route});
+    return this.forceFullscreen ? null : this.router.createUrlTree([], { relativeTo: this.route });
   }
 }
