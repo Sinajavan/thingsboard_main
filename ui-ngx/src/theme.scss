@@ -626,6 +626,55 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
     }
   }
 
+  // Dashboard Page & inner iframe content covers
+  div.tb-dashboard-page.mat-content {
+    background-color: transparent !important;
+  }
+
+  .tb-progress-cover {
+    background-color: #2b2b2b !important;
+  }
+
+  .tb-fullscreen-button-style {
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: rgba(255, 255, 255, 0.87) !important;
+  }
+
+  // Widget Preview canvas inside the iframe
+  gridster#gridster-child {
+    background-color: transparent !important;
+  }
+
+  // Auto-invert Ace Editor logic to force dark mode while maintaining syntax highlight hues
+  .ace_editor {
+    filter: invert(1) hue-rotate(180deg) !important;
+  }
+
+  // Widget Editor UI (Top-Right properties and Right-side Panels)
+  tb-widget-editor {
+    .tb-editor {
+      background-color: transparent !important;
+
+      .tb-resize-container {
+        background-color: transparent !important;
+      }
+
+      .tb-content {
+        border-color: rgba(255, 255, 255, 0.12) !important;
+      }
+    }
+
+    .tb-editor-area-title-panel label {
+      color: #00acc1;
+      background: rgba(255, 255, 255, 0.12) !important;
+    }
+
+    .tb-editor-area-title-panel button.mat-mdc-button-base {
+      background: rgba(255, 255, 255, 0.12) !important;
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+  }
+
   // Auto-invert Ace Editor logic to force dark mode while maintaining syntax highlight hues
   .ace_editor {
     filter: invert(1) hue-rotate(180deg) !important;
