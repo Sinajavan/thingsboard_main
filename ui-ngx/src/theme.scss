@@ -377,7 +377,9 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
   .mat-step-label,
   .mat-step-label.mat-step-label-selected,
   .mat-step-label.mat-step-label-active,
-  .tb-header-label {
+  .tb-header-label,
+  .entity-filter-type,
+  .entity-filter-value {
     color: white !important;
   }
 
@@ -445,8 +447,16 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
   .tb-card-title,
   .tb-home-widget-title,
   .tb-widget-title,
-  .tb-timewindow {
+  .tb-timewindow,
+  .tb-dashboard-title,
+  input.tb-dashboard-title,
+  mat-label.tb-dashboard-title-label,
+  .mat-mdc-form-field .mat-mdc-floating-label,
+  .mat-mdc-form-field mat-label {
+    // some elements like dashboard-title have inline [style.color] that need strong overriding
     color: white !important;
+
+
 
     .tb-title,
     span,
@@ -556,6 +566,49 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
       &-cell-buttons button.mat-mdc-icon-button.mat-mdc-button-base {
         color: rgba(255, 255, 255, 0.7) !important;
       }
+    }
+  }
+
+  // Structural Form Borders & Dividers
+  .tb-form-panel.stroked,
+  .tb-form-row {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+
+  mat-divider,
+  .mat-divider {
+    border-top-color: rgba(255, 255, 255, 0.12) !important;
+  }
+
+  .tb-form-panel.outlined {
+    --mat-form-field-outlined-outline-color: rgba(255, 255, 255, 0.12);
+    --mat-form-field-trailing-icon-color: rgba(255, 255, 255, 0.56);
+  }
+
+  // Inline Form Field Borders
+  .mdc-text-field--outlined:not(.mdc-text-field--focused):not(.mdc-text-field--disabled):not(.mdc-text-field--invalid):not(:hover) {
+
+    .mdc-notched-outline__leading,
+    .mdc-notched-outline__trailing,
+    .mdc-notched-outline__notch {
+      border-color: rgba(255, 255, 255, 0.12) !important;
+    }
+  }
+
+  // Fix invisible boxes like .tb-alias blending in
+  .tb-alias {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+  }
+
+  // Invert hardcoded black SVGs in custom HTML widgets
+  img[src*="data:image/svg+xml"] {
+
+    &[src*="fill=\"black\""],
+    &[src*="fill='black'"],
+    &[src*="%22black%22"],
+    &[src*="%27black%27"] {
+      filter: invert(1);
     }
   }
 }
