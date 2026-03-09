@@ -90,12 +90,14 @@ $tb-warn: mat.m2-get-color-from-palette(map-get($tb-theme, warn), text);
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
         -webkit-appearance: none;
+        appearance: none;
         margin: 0;
       }
 
       /* remove arrows from input for Firefox */
       input[type=number] {
         -moz-appearance: textfield;
+        appearance: textfield;
       }
 
       .tb-layout-preview-input {
@@ -123,7 +125,9 @@ $tb-warn: mat.m2-get-color-from-palette(map-get($tb-theme, warn), text);
   }
 
   .tb-layout-breakpoints {
-    .tb-form-table-header-cell, .tb-form-table-row-cell {
+
+    .tb-form-table-header-cell,
+    .tb-form-table-row-cell {
       &.tb-icon {
         width: 29px;
         min-width: 29px;
@@ -170,17 +174,48 @@ $tb-warn: mat.m2-get-color-from-palette(map-get($tb-theme, warn), text);
   }
 }
 
+:host-context(.tb-dark) {
+  .tb-add-breakpoint-button {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .tb-layout-preview {
+    background-color: transparent !important;
+    border: 1px dashed rgba(255, 255, 255, 0.12) !important;
+
+    .tb-layout-preview-container {
+      button.tb-fixed-layout-button {
+        color: white;
+
+        .mat-icon {
+          color: rgba(255, 255, 255, 0.76);
+        }
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+}
+
+
+
 :host ::ng-deep {
   .mat-button-toggle-group {
     width: 100%;
     min-width: 354px;
     border: 2px solid rgba(0, 0, 0, 0.06);
-    .mat-button-toggle-checked  {
+
+    .mat-button-toggle-checked {
       background: rgba(0, 0, 0, 0.06);
     }
+
     .mat-button-toggle {
       border: none !important;
     }
+
     .mat-button-toggle-label-content {
       .mat-pseudo-checkbox {
         display: none;
@@ -198,6 +233,7 @@ $tb-warn: mat.m2-get-color-from-palette(map-get($tb-theme, warn), text);
 }
 
 ::ng-deep {
+
   /* Alarm tooltip with side-to-side movement */
   .tb-layout-error-tooltip-right {
     background-color: $tb-warn !important;

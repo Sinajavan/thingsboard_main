@@ -376,8 +376,14 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
   .tb-cell,
   .mat-step-label,
   .mat-step-label.mat-step-label-selected,
-  .mat-step-label.mat-step-label-active {
+  .mat-step-label.mat-step-label-active,
+  .tb-header-label {
     color: white !important;
+  }
+
+  .mat-mdc-form-field-hint-wrapper,
+  .mat-hint {
+    color: rgba(255, 255, 255, 0.7) !important;
   }
 
   // Icon color overrides
@@ -512,7 +518,44 @@ $tb-dark-theme: map_merge($tb-dark-theme, (_mat-system: $tb-dark-theme-system));
 
   // Ensure table borders are visible
   .mat-mdc-header-row,
-  .mat-mdc-row {
-    border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+  .mat-mdc-row,
+  .mat-mdc-header-cell,
+  .mat-mdc-cell,
+  th.mat-mdc-header-cell,
+  td.mat-mdc-cell {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+
+  // Fieldsets and inputs sections
+  fieldset,
+  .fields-group {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+
+    legend {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+  }
+
+  // Form tables
+  .tb-form-table {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+
+    .tb-form-table-header {
+      border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+
+      &-cell {
+        color: rgba(255, 255, 255, 0.7) !important;
+      }
+    }
+
+    .tb-form-table-row {
+      &-cell {
+        color: white !important;
+      }
+
+      &-cell-buttons button.mat-mdc-icon-button.mat-mdc-button-base {
+        color: rgba(255, 255, 255, 0.7) !important;
+      }
+    }
   }
 }
