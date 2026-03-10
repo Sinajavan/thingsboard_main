@@ -516,6 +516,15 @@ $tb-dark-theme: map_merge(
   mat-toolbar {
     background-color: #2d2d2d !important;
     color: white !important;
+
+    .mat-mdc-button {
+      color: rgba(255, 255, 255, 0.87) !important;
+
+      .mat-icon,
+      tb-icon {
+        color: white !important;
+      }
+    }
   }
 
   // Side Menu Overrides
@@ -722,5 +731,27 @@ $tb-dark-theme: map_merge(
 
   .tb-file-hint {
     color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  // Widget Library Dashboard Widget Select Grid
+  .tb-dashboard-widget-select {
+    background-color: transparent !important;
+
+    .mat-mdc-card.tb-widget-preview-card {
+      background-color: #2b2b2b !important;
+
+      .title-container {
+        .widget-title {
+          color: rgba(255, 255, 255, 0.87) !important;
+        }
+
+        .title-items {
+          .widget-type {
+            background: rgba(255, 255, 255, 0.12) !important;
+            color: rgba(255, 255, 255, 0.7) !important;
+          }
+        }
+      }
+    }
   }
 }
