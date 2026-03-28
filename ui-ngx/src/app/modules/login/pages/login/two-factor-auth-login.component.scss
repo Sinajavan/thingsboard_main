@@ -20,7 +20,11 @@
   flex: 1 1 0;
 
   .tb-two-factor-auth-login-content {
-    background-color: #eee;
+    background-color: #ffffff;
+
+    :host-context(body.tb-dark) & {
+      background-color: #1a1a1a !important;
+    }
     --mat-card-elevated-container-elevation: none;
 
     .tb-two-factor-auth-login-card {

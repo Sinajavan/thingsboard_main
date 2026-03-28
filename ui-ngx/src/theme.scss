@@ -38,8 +38,7 @@ $tb-mat-indigo: (
   A200: #536dfe,
   A400: #3d5afe,
   A700: #304ffe,
-  contrast: (
-    50: rgba(black, 0.87),
+  contrast: (50: rgba(black, 0.87),
     100: rgba(black, 0.87),
     200: rgba(black, 0.87),
     300: white,
@@ -59,37 +58,24 @@ $tb-mat-indigo: (
 $tb-primary: mat.m2-define-palette($tb-mat-indigo);
 $tb-accent: mat.m2-define-palette(mat.$m2-deep-orange-palette);
 
-$tb-mat-theme: mat.m2-define-light-theme(
-  (
-    color: (
-      primary: $tb-primary,
-      accent: $tb-accent,
-    ),
-    typography: mat.m2-define-typography-config(
-        $button: mat.m2-define-typography-level(
-            14px,
-            36px,
-            500,
-            $letter-spacing: 0.03125em
-          ),
+$tb-mat-theme: mat.m2-define-light-theme((color: (primary: $tb-primary,
+        accent: $tb-accent,
       ),
-    density: 0,
-  )
-);
+      typography: mat.m2-define-typography-config($button: mat.m2-define-typography-level(14px,
+          36px,
+          500,
+          $letter-spacing: 0.03125em),
+      ),
+      density: 0,
+    ));
 
 $tb-theme-system: m2-utils.get-system($tb-mat-theme);
-$tb-theme-system: map_merge(
-  $tb-theme-system,
-  (
-    background: map_get(mat.$m2-grey-palette, 200),
-  )
-);
-$tb-theme: map_merge(
-  $tb-mat-theme,
-  (
-    _mat-system: $tb-theme-system,
-  )
-);
+$tb-theme-system: map_merge($tb-theme-system,
+    (background: map_get(mat.$m2-grey-palette, 200),
+    ));
+$tb-theme: map_merge($tb-mat-theme,
+    (_mat-system: $tb-theme-system,
+    ));
 
 $primary: mat.m2-get-color-from-palette($tb-primary);
 $accent: mat.m2-get-color-from-palette($tb-accent);
@@ -109,8 +95,7 @@ $tb-dark-mat-indigo: (
   A200: #536dfe,
   A400: #3d5afe,
   A700: #304ffe,
-  contrast: (
-    50: rgba(black, 0.87),
+  contrast: (50: rgba(black, 0.87),
     100: rgba(black, 0.87),
     200: rgba(black, 0.87),
     300: rgba(black, 0.87),
@@ -165,47 +150,31 @@ $tb-dark-background: (
   tooltip: map_get($tb-dark-mat-indigo, 700),
 );
 
-$tb-dark-theme: mat.m2-define-dark-theme(
-  (
-    color: (
-      primary: $tb-dark-primary,
-      accent: $tb-accent,
-    ),
-    typography: mat.m2-define-typography-config(),
-    density: 0,
-  )
-);
+$tb-dark-theme: mat.m2-define-dark-theme((color: (primary: $tb-dark-primary,
+        accent: $tb-accent,
+      ),
+      typography: mat.m2-define-typography-config(),
+      density: 0,
+    ));
 
 $tb-dark-theme-color: map_get($tb-dark-theme, color);
-$tb-dark-theme-color: map_merge(
-  $tb-dark-theme-color,
-  (
-    foreground: $tb-dark-foreground,
-    background: $tb-dark-background,
-  )
-);
-$tb-dark-theme: map_merge(
-  $tb-dark-theme,
-  (
-    color: $tb-dark-theme-color,
-  )
-);
+$tb-dark-theme-color: map_merge($tb-dark-theme-color,
+    (foreground: $tb-dark-foreground,
+      background: $tb-dark-background,
+    ));
+$tb-dark-theme: map_merge($tb-dark-theme,
+    (color: $tb-dark-theme-color,
+    ));
 
 $tb-dark-theme-system: m2-utils.get-system($tb-dark-theme);
-$tb-dark-theme-system: map_merge(
-  $tb-dark-theme-system,
-  (
-    surface: map_get($tb-dark-background, card),
-    background: map_get($tb-dark-background, background),
-    app-bar: map_get($tb-dark-background, app-bar),
-  )
-);
-$tb-dark-theme: map_merge(
-  $tb-dark-theme,
-  (
-    _mat-system: $tb-dark-theme-system,
-  )
-);
+$tb-dark-theme-system: map_merge($tb-dark-theme-system,
+    (surface: map_get($tb-dark-background, card),
+      background: map_get($tb-dark-background, background),
+      app-bar: map_get($tb-dark-background, app-bar),
+    ));
+$tb-dark-theme: map_merge($tb-dark-theme,
+    (_mat-system: $tb-dark-theme-system,
+    ));
 
 @mixin mat-fab-toolbar-theme($theme) {
   $primary: map-get($theme, primary);
@@ -632,9 +601,8 @@ $tb-dark-theme: map_merge(
   }
 
   // Inline Form Field Borders
-  .mdc-text-field--outlined:not(.mdc-text-field--focused):not(
-      .mdc-text-field--disabled
-    ):not(.mdc-text-field--invalid):not(:hover) {
+  .mdc-text-field--outlined:not(.mdc-text-field--focused):not(.mdc-text-field--disabled):not(.mdc-text-field--invalid):not(:hover) {
+
     .mdc-notched-outline__leading,
     .mdc-notched-outline__trailing,
     .mdc-notched-outline__notch {
@@ -663,6 +631,7 @@ $tb-dark-theme: map_merge(
     }
 
     .tb-editor-area-title-panel {
+
       label,
       button.mat-mdc-button-base {
         background-color: rgba(255, 255, 255, 0.12) !important;
@@ -704,6 +673,7 @@ $tb-dark-theme: map_merge(
 
   // Invert hardcoded black SVGs in custom HTML widgets
   img[src*="data:image/svg+xml"] {
+
     &[src*='fill="black"'],
     &[src*="fill='black'"],
     &[src*="%22black%22"],
@@ -754,4 +724,5 @@ $tb-dark-theme: map_merge(
       }
     }
   }
+
 }
